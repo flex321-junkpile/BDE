@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate – Brothers Dedicated To Excellence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/logo.png">
+  <style>
+    /* ===== Donate Page Specific ===== */
+    .donate-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .donate-why h3 {
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+      color: var(--white);
+    }
+
+    .donate-why p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .impact-list {
+      list-style: none;
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .impact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    .impact-list li::before {
+      content: '◆';
+      color: var(--gold);
+      font-size: 0.65rem;
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    /* Zeffy embed container */
+    .zeffy-wrap {
+      background: var(--navy-light);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(201,168,76,0.2);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .zeffy-header {
+      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+      padding: 28px 32px 20px;
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+
+    .zeffy-header h3 {
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .zeffy-header p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.88rem;
+    }
+
+    .zeffy-embed {
+      width: 100%;
+      min-height: 600px;
+      border: none;
+      display: block;
+      background: #fff;
+    }
+
+    .zeffy-fallback {
+      padding: 48px 32px;
+      text-align: center;
+    }
+
+    .zeffy-fallback p {
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+
+    /* Impact stats row */
+    .impact-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 64px;
+    }
+
+    .impact-stat {
+      text-align: center;
+      padding: 32px 20px;
+      background: var(--navy-light);
+      border-radius: var(--radius);
+      border: 1px solid rgba(201,168,76,0.15);
+    }
+
+    .impact-stat .amount {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .impact-stat .impact-desc {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    /* Zeffy note */
+    .zeffy-note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 16px;
+      padding: 12px 20px;
+      background: rgba(201,168,76,0.08);
+      border-radius: 8px;
+      border: 1px solid rgba(201,168,76,0.2);
+    }
+
+    .zeffy-note p {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.82rem;
+      margin: 0;
+    }
+
+    .zeffy-note span {
+      color: var(--gold);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 992px) {
+      .donate-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .impact-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .impact-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="donate.html" class="active nav-donate">Donate</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <span class="section-label">Support the Mission</span>
+      <h1>Invest in Brotherhood</h1>
+      <p>Your generosity fuels the programs, events, and outreach that help us build better men and stronger communities.</p>
+    </div>
+  </header>
+
+  <!-- Impact Stats -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="impact-stats fade-in">
+        <div class="impact-stat">
+          <span class="amount">$25</span>
+          <span class="impact-desc">Covers supplies for one community service event</span>
+        </div>
+        <div class="impact-stat">
+          <span class="amount">$50</span>
+          <span class="impact-desc">Sponsors a brother's participation in a leadership workshop</span>
+        </div>
+        <div class="impact-stat">
+          <span class="amount">$100</span>
+          <span class="impact-desc">Helps fund a full community outreach program</span>
+        </div>
+      </div>
+
+      <!-- Donate Grid -->
+      <div class="donate-grid">
+
+        <!-- Left: Why Donate -->
+        <div class="donate-why fade-in">
+          <h3>Why Your Gift Matters</h3>
+          <p>BDE is more than an organization — it's a movement. Every dollar you give goes directly toward developing leaders, serving communities, and forging the kind of brotherhood that changes lives.</p>
+          <p>We are a nonprofit organization run by brothers who show up — in classrooms, shelters, and neighborhoods. Your support makes that possible.</p>
+
+          <ul class="impact-list">
+            <li>Funding community service initiatives and outreach events</li>
+            <li>Supporting leadership development workshops and mentorship programs</li>
+            <li>Covering transportation and logistics for youth-facing activities</li>
+            <li>Keeping membership accessible for brothers at every income level</li>
+            <li>Growing our reach so more men can find their brotherhood</li>
+          </ul>
+
+          <div class="zeffy-note" style="margin-top: 32px;">
+            <span>&#9733;</span>
+            <p>Donations are processed securely through <strong style="color:var(--gold);">Zeffy</strong> — a 100% free platform for nonprofits. Every cent of your donation goes directly to BDE.</p>
+          </div>
+        </div>
+
+        <!-- Right: Zeffy Embed -->
+        <div class="fade-in">
+          <div class="zeffy-wrap">
+            <div class="zeffy-header">
+              <h3>Make a Donation</h3>
+              <p>Secure &amp; powered by Zeffy</p>
+            </div>
+
+            <!-- ============================================================
+                 ZEFFY EMBED
+                 Replace the src below with your Zeffy donation form URL:
+                 e.g. https://www.zeffy.com/en-US/embed/donation-form/YOUR-FORM-ID
+                 ============================================================ -->
+            <iframe
+              class="zeffy-embed"
+              src="https://www.zeffy.com/en-US/embed/donation-form/REPLACE-WITH-YOUR-ZEFFY-FORM-ID"
+              allow="payment"
+              allowpaymentrequest
+              title="BDE Donation Form">
+            </iframe>
+
+          </div>
+
+          <!-- Fallback direct link -->
+          <div style="text-align:center; margin-top: 20px;">
+            <p style="color:rgba(255,255,255,0.4); font-size:0.85rem; margin-bottom:12px;">Prefer to donate directly?</p>
+            <a
+              href="https://www.zeffy.com/en-US/donation-form/REPLACE-WITH-YOUR-ZEFFY-FORM-ID"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn--outline">
+              Give on Zeffy &#8599;
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2 class="fade-in">Not Ready to Give Yet?</h2>
+      <p class="fade-in">You can still support BDE by spreading the word, attending our events, or joining the brotherhood.</p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;" class="fade-in">
+        <a href="events.html" class="btn btn--gold">View Upcoming Events</a>
+        <a href="membership.html" class="btn btn--outline">Join BDE</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <img src="assets/logo.png" alt="BDE Logo" class="footer-logo">
+          <p>Brothers Dedicated To Excellence is a nonprofit organization forging leaders, strengthening communities, and creating impact that outlasts us all.</p>
+        </div>
+        <div>
+          <h4>Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="membership.html">Membership</a></li>
+            <li><a href="donate.html">Donate</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul class="footer-links">
+            <li>info@bdeexcellence.org</li>
+            <li>(443) 732-0492</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Brothers Dedicated To Excellence. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

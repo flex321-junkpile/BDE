@@ -267,6 +267,21 @@ img {
   color: var(--gold);
 }
 
+/* Donate CTA link in nav */
+.nav-donate {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light)) !important;
+  color: var(--navy) !important;
+  border-radius: 6px;
+  padding: 8px 18px !important;
+  font-weight: 700 !important;
+}
+
+.nav-donate:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  color: var(--navy) !important;
+}
+
 .nav-links a.active::after,
 .nav-links a:hover::after {
   transform: translateX(-50%) scaleX(1);
