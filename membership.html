@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membership - Brothers Dedicated To Excellence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/logo.png">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="membership.html" class="active">Membership</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Membership</h1>
+      <hr class="gold-line">
+      <p>Get in the room. Sign up, log in, or lock in your RSVP for what's next.</p>
+    </div>
+  </section>
+
+  <!-- Membership Section -->
+  <section class="section">
+    <div class="container">
+
+      <div class="membership-tabs fade-in">
+        <button class="tab-btn active" data-tab="signup">Sign Up</button>
+        <button class="tab-btn" data-tab="login">Log In</button>
+        <button class="tab-btn" data-tab="rsvp">RSVP</button>
+        <button class="tab-btn" data-tab="dashboard">Dashboard</button>
+      </div>
+
+      <!-- Sign Up -->
+      <div class="tab-content active" id="signup">
+        <div class="form-section fade-in">
+          <h2 style="text-align:center;margin-bottom:8px;">Step Into the Brotherhood</h2>
+          <hr class="gold-line">
+          <p class="section-subtitle">Your journey toward excellence starts right here.</p>
+          <form id="signup-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Your full name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="your@email.com">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000">
+              </div>
+              <div class="form-group">
+                <label for="password">Create Password *</label>
+                <input type="password" id="password" name="password" required placeholder="Choose a password" minlength="4">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="reason">What draws you to BDE?</label>
+              <textarea id="reason" name="reason" placeholder="Tell us what resonates with you and why you're ready to join..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--gold" style="width:100%;">Submit Application</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Log In -->
+      <div class="tab-content" id="login">
+        <div class="form-section fade-in">
+          <h2 style="text-align:center;margin-bottom:8px;">Welcome Back, Brother</h2>
+          <hr class="gold-line">
+          <p class="section-subtitle">Access your dashboard and manage your RSVPs.</p>
+          <form id="login-form">
+            <div class="form-group">
+              <label for="loginEmail">Email Address</label>
+              <input type="email" id="loginEmail" name="loginEmail" required placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+              <label for="loginPassword">Password</label>
+              <input type="password" id="loginPassword" name="loginPassword" required placeholder="Your password">
+            </div>
+            <button type="submit" class="btn btn--gold" style="width:100%;">Log In</button>
+          </form>
+          <p style="text-align:center;margin-top:24px;color:var(--text-light);font-size:0.9rem;">
+            Not a member yet? <a href="#" onclick="document.querySelector('[data-tab=signup]').click();return false;" style="color:var(--gold);font-weight:700;">Get started here</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- RSVP -->
+      <div class="tab-content" id="rsvp">
+        <div class="form-section fade-in">
+          <h2 style="text-align:center;margin-bottom:8px;">Claim Your Seat</h2>
+          <hr class="gold-line">
+          <p class="section-subtitle">Let us know you're pulling up to the next one.</p>
+          <form id="rsvp-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="rsvpName">Your Name *</label>
+                <input type="text" id="rsvpName" name="rsvpName" required placeholder="Full name">
+              </div>
+              <div class="form-group">
+                <label for="rsvpEmail">Email *</label>
+                <input type="email" id="rsvpEmail" name="rsvpEmail" required placeholder="your@email.com">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="rsvpEvent">Select Event *</label>
+              <select id="rsvpEvent" name="rsvpEvent" required>
+                <option value="">Choose an event...</option>
+                <option value="Brotherhood Workout & Hike - Apr 25">Brotherhood Workout &amp; Hike &mdash; Apr 25</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn--gold" style="width:100%;">Confirm RSVP</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Dashboard -->
+      <div class="tab-content" id="dashboard">
+        <div id="dashboard-content" class="fade-in"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <img src="assets/logo.png" alt="BDE Logo" class="footer-logo">
+          <p>Brothers Dedicated To Excellence is a nonprofit organization forging leaders, strengthening communities, and creating impact that outlasts us all.</p>
+        </div>
+        <div>
+          <h4>Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="membership.html">Membership</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul class="footer-links">
+            <li>info@bdeexcellence.org</li>
+            <li>(443) 732-0492</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Brothers Dedicated To Excellence. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

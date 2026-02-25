@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events - Brothers Dedicated To Excellence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/logo.png">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html" class="active">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="membership.html">Membership</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Events</h1>
+      <hr class="gold-line">
+      <p>Where the brotherhood comes alive. Pull up to what's next or look back at what we've built.</p>
+    </div>
+  </section>
+
+  <!-- Upcoming Events -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;" class="fade-in">
+        <span class="section-label">On the Calendar</span>
+      </div>
+      <h2 class="section-title fade-in">What's Coming Up</h2>
+      <hr class="gold-line">
+      <p class="section-subtitle fade-in">Lock in your dates. These are the ones you don't want to miss.</p>
+      <div class="event-list" id="upcoming-events"></div>
+    </div>
+  </section>
+
+  <!-- Past Events -->
+  <section class="section section--dark">
+    <div class="container">
+      <div style="text-align:center;" class="fade-in">
+        <span class="section-label">The Highlight Reel</span>
+      </div>
+      <h2 class="section-title fade-in">Where We've Been</h2>
+      <hr class="gold-line">
+      <p class="section-subtitle fade-in">Every event leaves a mark. Here's a look at the moments that defined us.</p>
+      <div class="card-grid" id="past-events"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <img src="assets/logo.png" alt="BDE Logo" class="footer-logo">
+          <p>Brothers Dedicated To Excellence is a nonprofit organization forging leaders, strengthening communities, and creating impact that outlasts us all.</p>
+        </div>
+        <div>
+          <h4>Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="membership.html">Membership</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul class="footer-links">
+            <li>info@bdeexcellence.org</li>
+            <li>(443) 732-0492</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Brothers Dedicated To Excellence. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const upcomingContainer = document.getElementById('upcoming-events');
+      if (upcomingContainer) {
+        upcomingContainer.innerHTML = upcomingEvents.map(event => `
+          <div class="event-item fade-in">
+            <div class="event-date">
+              <span class="month">${event.month}</span>
+              <span class="day">${event.day}</span>
+              <span class="year">${event.year}</span>
+            </div>
+            <div class="event-details">
+              <h3>${event.title}</h3>
+              <div class="event-meta">
+                <span>&#128338; ${event.time}</span>
+                <span>&#128205; ${event.location}</span>
+              </div>
+              <p>${event.description}</p>
+            </div>
+          </div>
+        `).join('');
+        const obs = new IntersectionObserver(
+          (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+          { threshold: 0.1 }
+        );
+        upcomingContainer.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+      }
+      const pastContainer = document.getElementById('past-events');
+      if (pastContainer) {
+        pastContainer.innerHTML = pastEvents.map(event => `
+          <div class="card past-event-card fade-in">
+            <div class="card-image">${event.icon}</div>
+            <div class="card-body">
+              <span class="event-tag">${event.tag}</span>
+              <h3>${event.title}</h3>
+              <p style="font-size:0.85rem;color:var(--gold);margin-bottom:8px;font-weight:600;">${event.date}</p>
+              <p>${event.description}</p>
+            </div>
+          </div>
+        `).join('');
+        const obs2 = new IntersectionObserver(
+          (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+          { threshold: 0.1 }
+        );
+        pastContainer.querySelectorAll('.fade-in').forEach(el => obs2.observe(el));
+      }
+    });
+  </script>
+</body>
+</html>

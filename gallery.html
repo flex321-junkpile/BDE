@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Brothers Dedicated To Excellence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/logo.png">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="membership.html">Membership</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>The Gallery</h1>
+      <hr class="gold-line">
+      <p>Faces, moments, and memories from inside the brotherhood.</p>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Upload Bar -->
+      <div class="gallery-upload-bar fade-in">
+        <input type="file" id="photo-upload" accept="image/*" multiple style="display:none;">
+        <button class="btn btn--gold" onclick="document.getElementById('photo-upload').click()">
+          + Add Photos
+        </button>
+        <p style="color:var(--text-light);font-size:0.95rem;margin:0;">Upload photos of the brothers, events, or group shots</p>
+      </div>
+
+      <!-- Photo Grid -->
+      <div class="gallery-grid fade-in" id="gallery-grid">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Empty State -->
+      <div class="gallery-grid-empty fade-in" id="gallery-empty" style="display:none;">
+        <span style="font-size:3.5rem;">📷</span>
+        <p>No photos yet — be the first to add some.</p>
+        <button class="btn btn--navy" style="margin-top:16px;" onclick="document.getElementById('photo-upload').click()">Upload Your First Photo</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container fade-in">
+      <h2>Be Part of the Story</h2>
+      <p>Every photo tells a chapter. Come write yours with us.</p>
+      <a href="membership.html" class="btn btn--gold">Join the Brotherhood</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <img src="assets/logo.png" alt="BDE Logo" class="footer-logo">
+          <p>Brothers Dedicated To Excellence is a nonprofit organization forging leaders, strengthening communities, and creating impact that outlasts us all.</p>
+        </div>
+        <div>
+          <h4>Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="membership.html">Membership</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul class="footer-links">
+            <li>info@bdeexcellence.org</li>
+            <li>(443) 732-0492</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Brothers Dedicated To Excellence. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    const STORAGE_KEY = 'bde_gallery_photos';
+
+    // Built-in event photos (always shown, cannot be deleted)
+    const builtInPhotos = [
+      'assets/photos/IMG_8241.jpg',
+      'assets/photos/IMG_0515.jpg',
+      'assets/photos/IMG_7180.jpg',
+      'assets/photos/IMG_7181.jpg',
+      'assets/photos/IMG_7158.jpg',
+      'assets/photos/IMG_7167.jpg',
+      'assets/photos/IMG_0113.jpg',
+      'assets/photos/IMG_0219.jpg',
+      'assets/photos/IMG_0109.jpg',
+      'assets/photos/IMG_1373.jpg',
+      'assets/photos/IMG_8248.jpg',
+      'assets/photos/IMG_0218.jpg',
+      'assets/photos/IMG_8488.jpg',
+    ];
+
+    function loadUploaded() {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    }
+
+    function saveUploaded(photos) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(photos));
+    }
+
+    function renderGallery() {
+      const uploaded = loadUploaded();
+      const grid = document.getElementById('gallery-grid');
+      const empty = document.getElementById('gallery-empty');
+
+      const total = builtInPhotos.length + uploaded.length;
+
+      if (!total) {
+        grid.style.display = 'none';
+        empty.style.display = 'block';
+        return;
+      }
+
+      grid.style.display = '';
+      empty.style.display = 'none';
+
+      // Built-in photos (no delete button)
+      const builtInHTML = builtInPhotos.map(src => `
+        <div class="gallery-item" onclick="openLightbox('${src}')">
+          <img src="${src}" alt="BDE Event Photo">
+          <div class="gallery-item-overlay"></div>
+        </div>
+      `).join('');
+
+      // Uploaded photos (with delete button)
+      const uploadedHTML = uploaded.map((photo, i) => `
+        <div class="gallery-item" data-index="${i}">
+          <img src="${photo.src}" alt="${photo.name || 'BDE Photo'}">
+          <div class="gallery-item-overlay">
+            <button class="gallery-delete-btn" onclick="deletePhoto(${i}, event)" title="Remove photo">&times;</button>
+          </div>
+        </div>
+      `).join('');
+
+      grid.innerHTML = builtInHTML + uploadedHTML;
+
+      // Click to lightbox for uploaded photos
+      grid.querySelectorAll('.gallery-item[data-index]').forEach(item => {
+        item.addEventListener('click', (e) => {
+          if (e.target.classList.contains('gallery-delete-btn')) return;
+          const idx = item.dataset.index;
+          openLightbox(loadUploaded()[idx].src);
+        });
+      });
+    }
+
+    function deletePhoto(index, e) {
+      e.stopPropagation();
+      const photos = loadUploaded();
+      photos.splice(index, 1);
+      saveUploaded(photos);
+      renderGallery();
+    }
+
+    function openLightbox(src) {
+      const lb = document.createElement('div');
+      lb.className = 'lightbox';
+      lb.innerHTML = `
+        <button class="lightbox-close" title="Close">&times;</button>
+        <img src="${src}" alt="BDE Photo">
+      `;
+      lb.addEventListener('click', (e) => {
+        if (e.target === lb || e.target.classList.contains('lightbox-close')) {
+          lb.remove();
+        }
+      });
+      document.body.appendChild(lb);
+    }
+
+    document.getElementById('photo-upload').addEventListener('change', function (e) {
+      const files = Array.from(e.target.files);
+      if (!files.length) return;
+      const photos = loadUploaded();
+      let loaded = 0;
+      files.forEach(file => {
+        const reader = new FileReader();
+        reader.onload = function (ev) {
+          photos.push({ src: ev.target.result, name: file.name });
+          loaded++;
+          if (loaded === files.length) {
+            saveUploaded(photos);
+            renderGallery();
+          }
+        };
+        reader.readAsDataURL(file);
+      });
+      this.value = '';
+    });
+
+    renderGallery();
+  </script>
+</body>
+</html>

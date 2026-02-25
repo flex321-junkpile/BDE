@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonials - Brothers Dedicated To Excellence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/logo.png">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="testimonials.html" class="active">Testimonials</a></li>
+        <li><a href="membership.html">Membership</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Real Talk</h1>
+      <hr class="gold-line">
+      <p>Don't take our word for it. Hear it straight from the brothers living it.</p>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;" class="fade-in">
+        <span class="section-label">Voices of the Brotherhood</span>
+      </div>
+      <h2 class="section-title fade-in">What the Brothers Are Saying</h2>
+      <hr class="gold-line">
+      <div class="fade-in" style="text-align:center;padding:60px 20px;">
+        <p style="font-size:1.15rem;color:var(--text-light);max-width:540px;margin:0 auto;line-height:1.9;">Real words from real brothers&mdash;coming soon. Be the first to share your story below.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- User-Submitted Testimonials -->
+  <section class="section section--dark" id="user-testimonials"></section>
+
+  <!-- Submit Form -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;" class="fade-in">
+        <span class="section-label">Your Story Matters</span>
+      </div>
+      <h2 class="section-title fade-in">Share Your Experience</h2>
+      <hr class="gold-line">
+      <p class="section-subtitle fade-in">If BDE has made an impact on your life, we want to hear it. Your words might be the reason someone else joins.</p>
+
+      <div class="form-section fade-in">
+        <form id="testimonial-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="testName">Your Name *</label>
+              <input type="text" id="testName" name="testName" required placeholder="Full name">
+            </div>
+            <div class="form-group">
+              <label for="testRole">Your Role</label>
+              <input type="text" id="testRole" name="testRole" placeholder="e.g. Member, Mentor, Founder">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="testQuote">Your Testimony *</label>
+            <textarea id="testQuote" name="testQuote" required placeholder="Tell it how it is. What has BDE meant to you?"></textarea>
+          </div>
+          <button type="submit" class="btn btn--gold" style="width:100%;">Submit Your Testimony</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <img src="assets/logo.png" alt="BDE Logo" class="footer-logo">
+          <p>Brothers Dedicated To Excellence is a nonprofit organization forging leaders, strengthening communities, and creating impact that outlasts us all.</p>
+        </div>
+        <div>
+          <h4>Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="membership.html">Membership</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul class="footer-links">
+            <li>info@bdeexcellence.org</li>
+            <li>(443) 732-0492</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Brothers Dedicated To Excellence. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
