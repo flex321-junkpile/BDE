@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BDE: Higher Ground — April 25th</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+
+  .flyer {
+    width: 1080px;
+    background: #f5f0e8;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ── Header ── */
+  .header-band {
+    background: #0A1931;
+    padding: 28px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .org-name {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: #C6A84B;
+    text-transform: uppercase;
+  }
+  .header-date {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+  }
+  .gold-line {
+    height: 6px;
+    background: linear-gradient(90deg, #C6A84B, #e8c96a, #C6A84B);
+  }
+
+  /* ── Title Block ── */
+  .title-block {
+    text-align: center;
+    padding: 40px 80px 8px;
+  }
+  .bde-prefix {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: #C6A84B;
+    letter-spacing: 18px;
+  }
+  .title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 130px;
+    line-height: 0.9;
+    color: #0A1931;
+    letter-spacing: 6px;
+  }
+  .tagline {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    color: #999;
+    text-transform: uppercase;
+    margin: 16px 0 22px;
+  }
+
+  /* ── Divider ── */
+  .divider {
+    width: 80px;
+    height: 4px;
+    background: #C6A84B;
+    margin: 0 auto 26px;
+  }
+
+  /* ── Cards Container ── */
+  .cards {
+    padding: 0 80px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+  }
+
+  /* ── About Card ── */
+  .about-card {
+    text-align: center;
+    padding: 0 20px 6px;
+  }
+  .section-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: #C6A84B;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .about-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #444;
+  }
+  .about-text .body-word {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    color: #E87722;
+    letter-spacing: 3px;
+    vertical-align: middle;
+  }
+
+  /* ── Info Card ── */
+  .info-card {
+    background: #0A1931;
+    padding: 26px 36px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .info-col {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .info-col + .info-col {
+    border-left: 1px solid rgba(198,168,75,0.25);
+    padding-left: 20px;
+  }
+  .info-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .info-detail {
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+  }
+  .info-detail strong {
+    display: block;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+
+  /* ── Guest Card ── */
+  .guest-card {
+    border: 2.5px solid #C6A84B;
+    border-radius: 8px;
+    padding: 26px 36px;
+    background: rgba(198,168,75,0.04);
+    text-align: center;
+  }
+  .guest-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: #0A1931;
+    letter-spacing: 3px;
+    margin: 8px 0 10px;
+  }
+  .guest-body {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.75;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* ── Bring a Brother ── */
+  .bring-card {
+    background: #E87722;
+    border-radius: 8px;
+    padding: 26px 36px;
+    text-align: center;
+  }
+  .bring-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: rgba(255,255,255,0.8);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .bring-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: #ffffff;
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+  }
+  .bring-body {
+    font-size: 16px;
+    color: rgba(255,255,255,0.92);
+    line-height: 1.7;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  /* ── RSVP Card ── */
+  .rsvp-card {
+    background: #0A1931;
+    border-radius: 8px;
+    padding: 24px 36px;
+    text-align: center;
+  }
+  .rsvp-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .rsvp-url {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    color: #C6A84B;
+    letter-spacing: 4px;
+  }
+  .rsvp-deadline {
+    font-size: 14px;
+    color: rgba(255,255,255,0.45);
+    margin-top: 4px;
+    letter-spacing: 2px;
+  }
+
+  /* ── Footer ── */
+  .footer-gold {
+    height: 4px;
+    background: linear-gradient(90deg, #C6A84B, #e8c96a, #C6A84B);
+  }
+  .footer-strip {
+    background: #0A1931;
+    padding: 20px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-strip span {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+  }
+  .footer-center {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #C6A84B !important;
+    text-transform: uppercase;
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .flyer { width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="flyer">
+
+  <!-- Header -->
+  <div class="header-band">
+    <div class="org-name">Brothers Dedicated to Excellence</div>
+    <div class="header-date">April 25, 2026</div>
+  </div>
+  <div class="gold-line"></div>
+
+  <!-- Title -->
+  <div class="title-block">
+    <div class="bde-prefix">B D E</div>
+    <div class="title">HIGHER<br>GROUND</div>
+  </div>
+  <div class="tagline">Mind &nbsp;•&nbsp; Body &nbsp;•&nbsp; Brotherhood</div>
+  <div class="divider"></div>
+
+  <!-- Cards -->
+  <div class="cards">
+
+    <!-- About -->
+    <div class="about-card">
+      <div class="section-label">About This Event</div>
+      <div class="about-text">
+        True excellence requires a balance of Mind, Body, and Spirit.
+        On April 25th, we emphasize the <span class="body-word">BODY.</span>
+        Join the Brothers of BDE for a high-energy <strong>Interactive Fitness Hike</strong>
+        through the trails of Great Falls Park.
+      </div>
+    </div>
+
+    <!-- Event Details -->
+    <div class="info-card">
+      <div class="info-col">
+        <div class="info-icon">📅</div>
+        <div class="info-detail">
+          <strong>Saturday, April 25th, 2026</strong>
+          9:00 AM — Check-in begins at 8:30 AM
+        </div>
+      </div>
+      <div class="info-col">
+        <div class="info-icon">📍</div>
+        <div class="info-detail">
+          <strong>Great Falls Park, VA</strong>
+          9200 Old Dominion Dr, McLean, VA
+        </div>
+      </div>
+      <div class="info-col">
+        <div class="info-icon">🥤</div>
+        <div class="info-detail">
+          <strong>Provided</strong>
+          Refreshments &amp; Gatorade on site
+        </div>
+      </div>
+    </div>
+
+    <!-- Special Guest -->
+    <div class="guest-card">
+      <div class="section-label">⭐ Special Guest</div>
+      <div class="guest-title">World-Class Trainer On The Trail</div>
+      <div class="guest-body">
+        A special guest facilitator will lead a <strong>fun, functional trail workout</strong> —
+        this isn't just a hike, it's a guided fitness experience designed to push your limits
+        and connect you to the brotherhood.
+      </div>
+    </div>
+
+    <!-- Bring a Brother -->
+    <div class="bring-card">
+      <div class="bring-label">Your Mission</div>
+      <div class="bring-title">BRING A BROTHER</div>
+      <div class="bring-body">
+        The path is better shared. All members are encouraged to invite
+        <strong>one friend</strong> to experience the BDE community.
+      </div>
+    </div>
+
+    <!-- RSVP -->
+    <div class="rsvp-card">
+      <div class="rsvp-label">RSVP Required</div>
+      <div class="rsvp-url">BDEXCELLENCE.ORG</div>
+      <div class="rsvp-deadline">Deadline: April 20th</div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer-gold"></div>
+  <div class="footer-strip">
+    <span>Est. BDE</span>
+    <span class="footer-center">Excellence &nbsp;•&nbsp; Brotherhood &nbsp;•&nbsp; Growth</span>
+    <span>BDEXCELLENCE.ORG</span>
+  </div>
+
+</div>
+</body>
+</html>

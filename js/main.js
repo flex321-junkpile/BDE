@@ -591,7 +591,8 @@ const upcomingEvents = [
     title: 'Brotherhood Workout & Hike',
     time: '8:00 AM',
     location: 'Great Falls Park, Virginia',
-    description: 'Lace up and show up. We\'re taking it outdoors — a brotherhood workout and hike through the trails at Great Falls. Come ready to push yourself and lock in with your brothers in nature.'
+    description: 'Lace up and show up. We\'re taking it outdoors — a brotherhood workout and hike through the trails at Great Falls. Come ready to push yourself and lock in with your brothers in nature.',
+    flyer: 'flyer-higher-ground.html'
   }
 ];
 
