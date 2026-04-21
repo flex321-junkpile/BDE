@@ -11,8 +11,9 @@
   <link rel="icon" href="assets/logo.png">
 </head>
 <body>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
   <!-- Navigation -->
-  <nav class="navbar">
+  <nav class="navbar" aria-label="Main navigation">
     <div class="container">
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -20,22 +21,24 @@
         <li><a href="events.html">Events</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="membership.html" class="active">Membership</a></li>
+        <li><a href="membership.html" class="active" aria-current="page">Membership</a></li>
         <li><a href="donate.html">Donate</a></li>
       </ul>
-      <button class="hamburger" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </button>
     </div>
   </nav>
+
+  <main id="main-content">
 
   <!-- Page Header -->
   <section class="page-header">
     <div class="container">
       <h1>Membership</h1>
-      <hr class="gold-line">
+      <hr class="gold-line" aria-hidden="true">
       <p>Get in the room. Sign up, log in, or lock in your RSVP for what's next.</p>
     </div>
   </section>
@@ -44,28 +47,30 @@
   <section class="section">
     <div class="container">
 
-      <div class="membership-tabs fade-in">
-        <button class="tab-btn active" data-tab="signup">Sign Up</button>
-        <button class="tab-btn" data-tab="login">Log In</button>
-        <button class="tab-btn" data-tab="rsvp">RSVP</button>
-        <button class="tab-btn" data-tab="dashboard">Dashboard</button>
+      <div class="membership-tabs fade-in" role="tablist" aria-label="Membership options">
+        <button class="tab-btn active" role="tab" data-tab="signup" id="tab-signup" aria-selected="true" aria-controls="panel-signup">Sign Up</button>
+        <button class="tab-btn" role="tab" data-tab="login" id="tab-login" aria-selected="false" aria-controls="panel-login">Log In</button>
+        <button class="tab-btn" role="tab" data-tab="rsvp" id="tab-rsvp" aria-selected="false" aria-controls="panel-rsvp">RSVP</button>
+        <button class="tab-btn" role="tab" data-tab="dashboard" id="tab-dashboard" aria-selected="false" aria-controls="panel-dashboard">Dashboard</button>
       </div>
 
       <!-- Sign Up -->
-      <div class="tab-content active" id="signup">
+      <div class="tab-content active" id="panel-signup" role="tabpanel" aria-labelledby="tab-signup" tabindex="0">
         <div class="form-section fade-in">
           <h2 style="text-align:center;margin-bottom:8px;">Step Into the Brotherhood</h2>
-          <hr class="gold-line">
+          <hr class="gold-line" aria-hidden="true">
           <p class="section-subtitle">Your journey toward excellence starts right here.</p>
-          <form id="signup-form">
+          <form id="signup-form" name="bde-membership-signup" method="post" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="bde-membership-signup">
+            <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Full Name *</label>
-                <input type="text" id="name" name="name" required placeholder="Your full name">
+                <input type="text" id="name" name="name" required aria-required="true" placeholder="Your full name">
               </div>
               <div class="form-group">
                 <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" required placeholder="your@email.com">
+                <input type="email" id="email" name="email" required aria-required="true" placeholder="your@email.com">
               </div>
             </div>
             <div class="form-row">
@@ -75,7 +80,7 @@
               </div>
               <div class="form-group">
                 <label for="password">Create Password *</label>
-                <input type="password" id="password" name="password" required placeholder="Choose a password" minlength="4">
+                <input type="password" id="password" name="password" required aria-required="true" placeholder="Choose a password" minlength="4">
               </div>
             </div>
             <div class="form-group">
@@ -88,19 +93,19 @@
       </div>
 
       <!-- Log In -->
-      <div class="tab-content" id="login">
+      <div class="tab-content" id="panel-login" role="tabpanel" aria-labelledby="tab-login" tabindex="0">
         <div class="form-section fade-in">
           <h2 style="text-align:center;margin-bottom:8px;">Welcome Back, Brother</h2>
-          <hr class="gold-line">
+          <hr class="gold-line" aria-hidden="true">
           <p class="section-subtitle">Access your dashboard and manage your RSVPs.</p>
           <form id="login-form">
             <div class="form-group">
               <label for="loginEmail">Email Address</label>
-              <input type="email" id="loginEmail" name="loginEmail" required placeholder="your@email.com">
+              <input type="email" id="loginEmail" name="loginEmail" required aria-required="true" placeholder="your@email.com">
             </div>
             <div class="form-group">
               <label for="loginPassword">Password</label>
-              <input type="password" id="loginPassword" name="loginPassword" required placeholder="Your password">
+              <input type="password" id="loginPassword" name="loginPassword" required aria-required="true" placeholder="Your password">
             </div>
             <button type="submit" class="btn btn--gold" style="width:100%;">Log In</button>
           </form>
@@ -111,25 +116,27 @@
       </div>
 
       <!-- RSVP -->
-      <div class="tab-content" id="rsvp">
+      <div class="tab-content" id="panel-rsvp" role="tabpanel" aria-labelledby="tab-rsvp" tabindex="0">
         <div class="form-section fade-in">
           <h2 style="text-align:center;margin-bottom:8px;">Claim Your Seat</h2>
-          <hr class="gold-line">
+          <hr class="gold-line" aria-hidden="true">
           <p class="section-subtitle">Let us know you're pulling up to the next one.</p>
-          <form id="rsvp-form">
+          <form id="rsvp-form" name="bde-rsvp" method="post" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="bde-rsvp">
+            <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
             <div class="form-row">
               <div class="form-group">
                 <label for="rsvpName">Your Name *</label>
-                <input type="text" id="rsvpName" name="rsvpName" required placeholder="Full name">
+                <input type="text" id="rsvpName" name="rsvpName" required aria-required="true" placeholder="Full name">
               </div>
               <div class="form-group">
                 <label for="rsvpEmail">Email *</label>
-                <input type="email" id="rsvpEmail" name="rsvpEmail" required placeholder="your@email.com">
+                <input type="email" id="rsvpEmail" name="rsvpEmail" required aria-required="true" placeholder="your@email.com">
               </div>
             </div>
             <div class="form-group">
               <label for="rsvpEvent">Select Event *</label>
-              <select id="rsvpEvent" name="rsvpEvent" required>
+              <select id="rsvpEvent" name="rsvpEvent" required aria-required="true">
                 <option value="">Choose an event...</option>
                 <option value="Brotherhood Workout & Hike - Apr 25">Brotherhood Workout &amp; Hike &mdash; Apr 25</option>
               </select>
@@ -140,24 +147,27 @@
       </div>
 
       <!-- Dashboard -->
-      <div class="tab-content" id="dashboard">
+      <div class="tab-content" id="panel-dashboard" role="tabpanel" aria-labelledby="tab-dashboard" tabindex="0">
         <div id="dashboard-content" class="fade-in"></div>
       </div>
 
     </div>
   </section>
+  <div aria-live="polite" aria-atomic="true" class="sr-only" id="form-status"></div>
+
+  </main>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer" aria-label="Site footer">
     <div class="container">
       <div class="footer-content">
         <div>
-          <img src="assets/logo.png" alt="BDE Logo" class="footer-logo">
+          <img src="assets/logo.png" alt="Brothers Dedicated To Excellence logo" class="footer-logo">
           <p>Brothers Dedicated To Excellence is a nonprofit organization forging leaders, strengthening communities, and creating impact that outlasts us all.</p>
         </div>
-        <div>
+        <nav aria-label="Footer navigation">
           <h4>Navigate</h4>
-          <ul class="footer-links">
+          <ul class="footer-links" role="list">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="events.html">Events</a></li>
@@ -166,12 +176,12 @@
             <li><a href="membership.html">Membership</a></li>
             <li><a href="donate.html">Donate</a></li>
           </ul>
-        </div>
+        </nav>
         <div>
           <h4>Connect</h4>
-          <ul class="footer-links">
-            <li>brothersdedicatedtoexcellence@gmail.com</li>
-            <li>(443) 732-0492</li>
+          <ul class="footer-links" role="list">
+            <li><a href="mailto:brothersdedicatedtoexcellence@gmail.com">brothersdedicatedtoexcellence@gmail.com</a></li>
+            <li><a href="tel:+14437320492">(443) 732-0492</a></li>
           </ul>
         </div>
       </div>

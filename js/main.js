@@ -81,7 +81,7 @@ function initForms() {
   // Sign Up Form
   const signupForm = document.getElementById('signup-form');
   if (signupForm) {
-    signupForm.addEventListener('submit', (e) => {
+    signupForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const data = Object.fromEntries(new FormData(signupForm));
 
@@ -90,7 +90,7 @@ function initForms() {
         return;
       }
 
-      // Save member data
+      // Save member data locally
       const members = JSON.parse(localStorage.getItem('bde_members') || '[]');
       const existing = members.find(m => m.email === data.email);
       if (existing) {
@@ -102,6 +102,16 @@ function initForms() {
       data.status = 'Active';
       members.push(data);
       localStorage.setItem('bde_members', JSON.stringify(members));
+
+      // Submit to Netlify — exclude password from the server-side log
+      try {
+        const { password, 'bot-field': _bot, ...safeData } = data;
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({ 'form-name': 'bde-membership-signup', ...safeData }).toString()
+        });
+      } catch (_) { /* non-blocking — local save already succeeded */ }
 
       showMessage(signupForm, 'Welcome to BDE! You can now log in with your email.', 'success');
       signupForm.reset();
@@ -136,7 +146,7 @@ function initForms() {
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
         document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
         document.querySelector('[data-tab="dashboard"]')?.classList.add('active');
-        document.getElementById('dashboard')?.classList.add('active');
+        document.getElementById('panel-dashboard')?.classList.add('active');
         renderDashboard();
       }, 800);
     });
@@ -145,7 +155,7 @@ function initForms() {
   // RSVP Form
   const rsvpForm = document.getElementById('rsvp-form');
   if (rsvpForm) {
-    rsvpForm.addEventListener('submit', (e) => {
+    rsvpForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const data = Object.fromEntries(new FormData(rsvpForm));
 
@@ -162,6 +172,15 @@ function initForms() {
         date: new Date().toLocaleDateString()
       });
       localStorage.setItem('bde_rsvps', JSON.stringify(rsvps));
+
+      // Submit to Netlify so you receive email notifications and a server-side log
+      try {
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({ 'form-name': 'bde-rsvp', ...data }).toString()
+        });
+      } catch (_) { /* non-blocking — local save already succeeded */ }
 
       showMessage(rsvpForm, 'RSVP confirmed! We look forward to seeing you.', 'success');
       rsvpForm.reset();
@@ -233,12 +252,12 @@ function showMessage(form, text, type) {
 /* ===== Check Login State ===== */
 function checkLoginState() {
   const user = JSON.parse(localStorage.getItem('bde_current_user') || 'null');
-  if (user && document.getElementById('dashboard')) {
+  if (user && document.getElementById('panel-dashboard')) {
     // Auto-show dashboard if logged in
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
     document.querySelector('[data-tab="dashboard"]')?.classList.add('active');
-    document.getElementById('dashboard')?.classList.add('active');
+    document.getElementById('panel-dashboard')?.classList.add('active');
   }
 }
 
@@ -297,7 +316,7 @@ function logout() {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
   document.querySelector('[data-tab="login"]')?.classList.add('active');
-  document.getElementById('login')?.classList.add('active');
+  document.getElementById('panel-login')?.classList.add('active');
   renderDashboard();
 }
 
