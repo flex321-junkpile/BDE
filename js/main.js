@@ -71,7 +71,7 @@ function initMembershipTabs() {
       tabContents.forEach(c => c.classList.remove('active'));
 
       btn.classList.add('active');
-      document.getElementById(target)?.classList.add('active');
+      document.getElementById('panel-' + target)?.classList.add('active');
     });
   });
 }
