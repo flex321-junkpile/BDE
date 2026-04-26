@@ -11,31 +11,34 @@
   <link rel="icon" href="assets/logo.png">
 </head>
 <body>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
   <!-- Navigation -->
-  <nav class="navbar">
+  <nav class="navbar" aria-label="Main navigation">
     <div class="container">
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="events.html" class="active">Events</a></li>
+        <li><a href="events.html" class="active" aria-current="page">Events</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
         <li><a href="membership.html">Membership</a></li>
         <li><a href="donate.html">Donate</a></li>
       </ul>
-      <button class="hamburger" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </button>
     </div>
   </nav>
+
+  <main id="main-content">
 
   <!-- Page Header -->
   <section class="page-header">
     <div class="container">
       <h1>Events</h1>
-      <hr class="gold-line">
+      <hr class="gold-line" aria-hidden="true">
       <p>Where the brotherhood comes alive. Pull up to what's next or look back at what we've built.</p>
     </div>
   </section>
@@ -47,7 +50,7 @@
         <span class="section-label">On the Calendar</span>
       </div>
       <h2 class="section-title fade-in">What's Coming Up</h2>
-      <hr class="gold-line">
+      <hr class="gold-line" aria-hidden="true">
       <p class="section-subtitle fade-in">Lock in your dates. These are the ones you don't want to miss.</p>
       <div class="event-list" id="upcoming-events"></div>
     </div>
@@ -60,23 +63,25 @@
         <span class="section-label">The Highlight Reel</span>
       </div>
       <h2 class="section-title fade-in">Where We've Been</h2>
-      <hr class="gold-line">
+      <hr class="gold-line" aria-hidden="true">
       <p class="section-subtitle fade-in">Every event leaves a mark. Here's a look at the moments that defined us.</p>
       <div class="card-grid" id="past-events"></div>
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer" aria-label="Site footer">
     <div class="container">
       <div class="footer-content">
         <div>
-          <img src="assets/logo.png" alt="BDE Logo" class="footer-logo">
+          <img src="assets/logo.png" alt="Brothers Dedicated To Excellence logo" class="footer-logo">
           <p>Brothers Dedicated To Excellence is a nonprofit organization forging leaders, strengthening communities, and creating impact that outlasts us all.</p>
         </div>
-        <div>
+        <nav aria-label="Footer navigation">
           <h4>Navigate</h4>
-          <ul class="footer-links">
+          <ul class="footer-links" role="list">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="events.html">Events</a></li>
@@ -85,12 +90,12 @@
             <li><a href="membership.html">Membership</a></li>
             <li><a href="donate.html">Donate</a></li>
           </ul>
-        </div>
+        </nav>
         <div>
           <h4>Connect</h4>
-          <ul class="footer-links">
-            <li>brothersdedicatedtoexcellence@gmail.com</li>
-            <li>(443) 732-0492</li>
+          <ul class="footer-links" role="list">
+            <li><a href="mailto:brothersdedicatedtoexcellence@gmail.com">brothersdedicatedtoexcellence@gmail.com</a></li>
+            <li><a href="tel:+14437320492">(443) 732-0492</a></li>
           </ul>
         </div>
       </div>
@@ -100,10 +105,35 @@
     </div>
   </footer>
 
+  <!-- RSVP Modal -->
+  <div id="rsvp-modal" role="dialog" aria-modal="true" aria-labelledby="rsvp-modal-title" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;overflow-y:auto;padding:30px 16px;">
+    <div style="position:relative;max-width:500px;margin:40px auto;background:#0f1f3d;border-radius:8px;padding:36px 32px;border:1px solid #C6A84B;">
+      <button onclick="closeRSVP()" aria-label="Close RSVP form" style="position:absolute;top:14px;right:18px;background:#C6A84B;color:#0A1931;border:none;border-radius:50%;width:36px;height:36px;font-size:18px;font-weight:700;cursor:pointer;line-height:1;">✕</button>
+      <h2 id="rsvp-modal-title" style="font-family:'Playfair Display',serif;color:#C6A84B;margin:0 0 6px;">Claim Your Seat</h2>
+      <hr style="border-color:#C6A84B;margin-bottom:20px;">
+      <p style="color:#ccc;font-size:0.95rem;margin-bottom:20px;">You're RSVPing for: <strong id="rsvp-event-label" style="color:#fff;"></strong></p>
+      <form id="rsvp-modal-form" name="bde-rsvp" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="bde-rsvp">
+        <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <input type="hidden" id="rsvp-modal-event" name="rsvpEvent" value="">
+        <div style="margin-bottom:16px;">
+          <label style="display:block;color:#ccc;font-size:0.9rem;margin-bottom:6px;font-weight:600;">Full Name *</label>
+          <input type="text" id="rsvp-modal-name" name="rsvpName" required aria-required="true" placeholder="Your full name" style="width:100%;padding:10px 14px;background:#1a2e52;border:1px solid #334;border-radius:4px;color:#fff;font-size:1rem;box-sizing:border-box;">
+        </div>
+        <div style="margin-bottom:24px;">
+          <label style="display:block;color:#ccc;font-size:0.9rem;margin-bottom:6px;font-weight:600;">Email Address *</label>
+          <input type="email" id="rsvp-modal-email" name="rsvpEmail" required aria-required="true" placeholder="your@email.com" style="width:100%;padding:10px 14px;background:#1a2e52;border:1px solid #334;border-radius:4px;color:#fff;font-size:1rem;box-sizing:border-box;">
+        </div>
+        <button type="submit" style="width:100%;background:#C6A84B;color:#0A1931;border:none;padding:13px;font-weight:700;font-size:1rem;letter-spacing:1px;cursor:pointer;border-radius:4px;text-transform:uppercase;">Confirm RSVP</button>
+        <div id="rsvp-modal-message" style="margin-top:14px;text-align:center;font-size:0.95rem;display:none;"></div>
+      </form>
+    </div>
+  </div>
+
   <!-- Flyer Modal -->
-  <div id="flyer-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;overflow-y:auto;padding:30px 16px;">
+  <div id="flyer-modal" role="dialog" aria-modal="true" aria-label="Event flyer viewer" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;overflow-y:auto;padding:30px 16px;">
     <div style="position:relative;max-width:900px;margin:0 auto;">
-      <button onclick="document.getElementById('flyer-modal').style.display='none'" style="position:fixed;top:20px;right:24px;background:#C6A84B;color:#0A1931;border:none;border-radius:50%;width:44px;height:44px;font-size:22px;font-weight:700;cursor:pointer;z-index:10000;line-height:1;">✕</button>
+      <button onclick="document.getElementById('flyer-modal').style.display='none'" aria-label="Close flyer" style="position:fixed;top:20px;right:24px;background:#C6A84B;color:#0A1931;border:none;border-radius:50%;width:44px;height:44px;font-size:22px;font-weight:700;cursor:pointer;z-index:10000;line-height:1;">✕</button>
       <iframe id="flyer-frame" src="" style="width:100%;height:90vh;border:none;border-radius:8px;" title="Event Flyer"></iframe>
     </div>
   </div>
@@ -113,6 +143,12 @@
     document.addEventListener('DOMContentLoaded', () => {
       const upcomingContainer = document.getElementById('upcoming-events');
       if (upcomingContainer) {
+        if (!upcomingEvents.length) {
+          upcomingContainer.innerHTML = `<div style="text-align:center;padding:48px 20px;color:rgba(255,255,255,0.5);">
+            <p style="font-size:1.1rem;margin-bottom:8px;">Nothing on the calendar just yet.</p>
+            <p style="font-size:0.9rem;">Check back soon — something's always in the works.</p>
+          </div>`;
+        } else {
         upcomingContainer.innerHTML = upcomingEvents.map(event => `
           <div class="event-item fade-in">
             <div class="event-date">
@@ -127,7 +163,10 @@
                 <span>&#128205; ${event.location}</span>
               </div>
               <p>${event.description}</p>
-              ${event.flyer ? `<button onclick="openFlyer('${event.flyer}')" style="margin-top:14px;background:#C6A84B;color:#0A1931;border:none;padding:10px 24px;font-weight:700;font-size:0.9rem;letter-spacing:1px;cursor:pointer;border-radius:4px;text-transform:uppercase;">View Flyer</button>` : ''}
+              <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:14px;">
+                ${event.flyer ? `<button onclick="openFlyer('${event.flyer}')" style="background:#C6A84B;color:#0A1931;border:none;padding:10px 24px;font-weight:700;font-size:0.9rem;letter-spacing:1px;cursor:pointer;border-radius:4px;text-transform:uppercase;">View Flyer</button>` : ''}
+                <button onclick="openRSVP('${event.title} — ${event.month} ${event.day}')" style="background:transparent;color:#C6A84B;border:2px solid #C6A84B;padding:10px 24px;font-weight:700;font-size:0.9rem;letter-spacing:1px;cursor:pointer;border-radius:4px;text-transform:uppercase;">RSVP Now</button>
+              </div>
             </div>
           </div>
         `).join('');
@@ -136,6 +175,7 @@
           { threshold: 0.1 }
         );
         upcomingContainer.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+        } // end else
       }
       const pastContainer = document.getElementById('past-events');
       if (pastContainer) {
@@ -168,6 +208,62 @@
         document.getElementById('flyer-frame').src = '';
         document.body.style.overflow = '';
       }
+    });
+
+    function openRSVP(eventName) {
+      document.getElementById('rsvp-event-label').textContent = eventName;
+      document.getElementById('rsvp-modal').removeAttribute('aria-hidden');
+      document.getElementById('rsvp-modal-event').value = eventName;
+      document.getElementById('rsvp-modal-form').reset();
+      document.getElementById('rsvp-modal-event').value = eventName;
+      document.getElementById('rsvp-modal-message').style.display = 'none';
+      document.getElementById('rsvp-modal').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeRSVP() {
+      document.getElementById('rsvp-modal').style.display = 'none';
+      document.getElementById('rsvp-modal').setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('rsvp-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeRSVP();
+    });
+
+    document.getElementById('rsvp-modal-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const name  = document.getElementById('rsvp-modal-name').value.trim();
+      const email = document.getElementById('rsvp-modal-email').value.trim();
+      const event = document.getElementById('rsvp-modal-event').value;
+      const msgEl = document.getElementById('rsvp-modal-message');
+
+      if (!name || !email) {
+        msgEl.textContent = 'Please fill in all fields.';
+        msgEl.style.color = '#ff6b6b';
+        msgEl.style.display = 'block';
+        return;
+      }
+
+      // Save to localStorage
+      const rsvps = JSON.parse(localStorage.getItem('bde_rsvps') || '[]');
+      rsvps.push({ name, email, event: event, date: new Date().toLocaleDateString() });
+      localStorage.setItem('bde_rsvps', JSON.stringify(rsvps));
+
+      // Submit to Netlify
+      try {
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({ 'form-name': 'bde-rsvp', rsvpName: name, rsvpEmail: email, rsvpEvent: event }).toString()
+        });
+      } catch (_) {}
+
+      msgEl.textContent = "You're in! We look forward to seeing you.";
+      msgEl.style.color = '#4caf50';
+      msgEl.style.display = 'block';
+      document.getElementById('rsvp-modal-form').reset();
+      setTimeout(closeRSVP, 2500);
     });
   </script>
 </body>

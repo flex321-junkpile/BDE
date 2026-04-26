@@ -172,12 +172,66 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* ===== Mobile Donate Experience ===== */
+    .mobile-donate-cta {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .zeffy-wrap {
+        display: none;
+      }
+
+      .mobile-donate-cta {
+        display: block;
+        background: var(--navy-light);
+        border: 1px solid rgba(201,168,76,0.3);
+        border-radius: var(--radius-lg);
+        padding: 40px 28px;
+        text-align: center;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .mobile-donate-cta h3 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 1.5rem;
+        color: var(--white);
+        margin-bottom: 12px;
+      }
+
+      .mobile-donate-cta p {
+        color: rgba(255,255,255,0.6);
+        font-size: 0.95rem;
+        margin-bottom: 28px;
+        line-height: 1.7;
+      }
+
+      .mobile-donate-cta .btn--gold {
+        display: block;
+        width: 100%;
+        padding: 16px;
+        font-size: 1.05rem;
+        letter-spacing: 1.5px;
+        margin-bottom: 16px;
+      }
+
+      .mobile-donate-cta .zeffy-note {
+        margin-top: 20px;
+        text-align: left;
+      }
+
+      .donate-grid {
+        gap: 32px;
+      }
+    }
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
 
   <!-- Navigation -->
-  <nav class="navbar">
+  <nav class="navbar" aria-label="Main navigation">
     <div class="container">
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -188,13 +242,15 @@
         <li><a href="membership.html">Membership</a></li>
         <li><a href="donate.html" class="active nav-donate">Donate</a></li>
       </ul>
-      <button class="hamburger" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </button>
     </div>
   </nav>
+
+  <main id="main-content">
 
   <!-- Page Header -->
   <header class="page-header">
@@ -248,6 +304,18 @@
 
         <!-- Right: Zeffy Embed -->
         <div class="fade-in">
+
+          <!-- Mobile-only CTA (iframe hidden on mobile) -->
+          <div class="mobile-donate-cta">
+            <h3>Make a Donation</h3>
+            <p>Every dollar goes directly to BDE — funding events, outreach, and brotherhood. Processed securely through Zeffy at zero cost to us.</p>
+            <a href="https://www.zeffy.com/en-US/donation-form/bde-donations" target="_blank" rel="noopener noreferrer" class="btn btn--gold">Donate Now ↗</a>
+            <div class="zeffy-note">
+              <span>&#9733;</span>
+              <p>100% of your donation reaches BDE. Zeffy charges us nothing.</p>
+            </div>
+          </div>
+
           <div class="zeffy-wrap">
             <div class="zeffy-header">
               <h3>Make a Donation</h3>
@@ -271,7 +339,7 @@
 
           <!-- Fallback direct link -->
           <div style="text-align:center; margin-top: 20px;">
-            <p style="color:rgba(255,255,255,0.4); font-size:0.85rem; margin-bottom:12px;">Prefer to donate directly?</p>
+            <p style="color:rgba(255,255,255,0.75); font-size:0.85rem; margin-bottom:12px;">Prefer to donate directly?</p>
             <a
               href="https://www.zeffy.com/en-US/donation-form/bde-donations"
               target="_blank"
@@ -297,6 +365,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- Footer -->
   <footer class="footer">

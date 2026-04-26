@@ -602,20 +602,16 @@ function saveTestimony(name, role, quote) {
 }
 
 /* ===== Events Data ===== */
-const upcomingEvents = [
-  {
-    month: 'APR',
-    day: '25',
-    year: '2026',
-    title: 'Brotherhood Workout & Hike',
-    time: '8:00 AM',
-    location: 'Great Falls Park, Virginia',
-    description: 'Lace up and show up. We\'re taking it outdoors — a brotherhood workout and hike through the trails at Great Falls. Come ready to push yourself and lock in with your brothers in nature.',
-    flyer: 'flyer-higher-ground.html'
-  }
-];
+const upcomingEvents = [];
 
 const pastEvents = [
+  {
+    title: 'Higher Ground — Brotherhood Workout & Hike',
+    date: 'April 25, 2026',
+    tag: 'Fellowship',
+    description: 'Brothers laced up and showed out at Great Falls Park. A brotherhood workout and hike through the trails — pushing limits, locking in, and building bonds in nature. 17 brothers made it out.',
+    icon: '&#129406;'
+  },
   {
     title: 'Fellowship Round Table',
     date: 'January 10, 2026',
