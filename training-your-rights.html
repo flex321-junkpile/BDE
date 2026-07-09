@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Rights When Stopped by Police - Brothers Dedicated To Excellence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css"><link rel="icon" href="assets/logo.png">
+</head>
+<body>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+      <ul class="nav-links" role="list"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="events.html">Events</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="membership.html">Membership</a></li><li><a href="community-service.html" class="active" aria-current="page">Community Service</a></li><li><a href="training-hub.html">Training</a></li><li><a href="donate.html">Donate</a></li></ul>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+    </div>
+  </nav>
+  <main id="main-content">
+  <section class="page-header"><div class="container"><h1>Your Rights When Stopped by Police</h1><hr class="gold-line" aria-hidden="true"><p>A focused 100-question training on the Fourth, Fifth, and Sixth Amendments in plain language — what you can do, what you should say, and when.</p></div></section>
+  <section class="section">
+    <div class="container" style="max-width: 880px;">
+      <div style="margin-bottom:20px;"><a href="training-hub.html" style="color:var(--gold,#C9A84C);">← Back to Training Hub</a></div>
+      <div id="screen-intro" class="form-section fade-in">
+        <h2 style="text-align:center;margin-bottom:8px;">About This Training</h2><hr class="gold-line" aria-hidden="true">
+        <div class="intro-block">
+          <h3>What This Is</h3>
+          <p>Rights are only useful if you know how and when to use them. This training builds working knowledge of the constitutional rights that come into play during any police encounter — the Fourth (searches and seizures), Fifth (silence and self-incrimination), and Sixth (right to counsel) — plus the state-specific rules that shape how they actually work.</p>
+        </div>
+        <div class="intro-block">
+          <h3>What's Covered</h3>
+          <ol class="intro-topics">
+            <li><strong>Fourth Amendment</strong><span>Searches, seizures, warrants, plain view, and the exclusionary rule.</span></li>
+            <li><strong>Fifth Amendment</strong><span>Right to silence, self-incrimination, and how to invoke.</span></li>
+            <li><strong>Sixth Amendment</strong><span>Right to counsel, Miranda origins, and effective representation.</span></li>
+            <li><strong>Miranda</strong><span>When it applies, when it doesn't, and how to invoke it clearly.</span></li>
+            <li><strong>Probable Cause vs. Reasonable Suspicion</strong><span>The two standards that gate police action.</span></li>
+            <li><strong>Consent &amp; Waiver</strong><span>How consent is given, revoked, and undermined.</span></li>
+            <li><strong>Detention vs. Arrest vs. Free-to-Go</strong><span>The three categories every encounter falls into.</span></li>
+            <li><strong>Recording Rights</strong><span>First Amendment protections for recording police.</span></li>
+            <li><strong>Virginia-Specific</strong><span>Stop-and-identify, marijuana, open carry, implied consent.</span></li>
+            <li><strong>When Rights Are Violated</strong><span>Section 1983, qualified immunity, and how to preserve claims.</span></li>
+          </ol>
+        </div>
+        <div class="intro-block">
+          <h3>Format &amp; Time</h3>
+          <div class="intro-facts">
+            <div class="fact"><span class="fact-num">100</span><span class="fact-label">Multiple-choice questions</span></div>
+            <div class="fact"><span class="fact-num">1</span><span class="fact-label">Standalone training</span></div>
+            <div class="fact"><span class="fact-num">5 hr</span><span class="fact-label">Completion credit</span></div>
+            <div class="fact"><span class="fact-num">80%</span><span class="fact-label">To earn certificate</span></div>
+          </div>
+        </div>
+        <div class="training-overview" style="margin-top:18px;"><p class="disclaimer" style="border-top:none;padding-top:0;"><strong>Disclaimer:</strong> This training is educational and is not legal advice. Laws vary by state and change over time. For specific matters, consult an attorney.</p></div>
+        <button id="btn-intro-continue" type="button" class="btn btn--gold" style="width:100%;margin-top:18px;">Continue to Enrollment</button>
+      </div>
+      <div id="screen-start" class="form-section fade-in" hidden>
+        <h2 style="text-align:center;margin-bottom:8px;">Enroll &amp; Begin</h2><hr class="gold-line" aria-hidden="true">
+        <p class="section-subtitle">Enter your name as you want it on the certificate.</p>
+        <div id="resume-banner" class="resume-banner" hidden><h3>Welcome back, <span id="resume-name"></span></h3><p>You have a saved session in progress: <strong id="resume-progress"></strong>.</p><div class="resume-actions"><button id="btn-resume" type="button" class="btn btn--gold">Resume Training</button><button id="btn-discard-saved" type="button" class="btn btn--outline">Start Over</button></div></div>
+        <div class="form-row"><div class="form-group"><label for="start-name">Full Name *</label><input type="text" id="start-name" required></div><div class="form-group"><label for="start-email">Email Address *</label><input type="email" id="start-email" required></div></div>
+        <button id="btn-start" type="button" class="btn btn--gold" style="width:100%;">Start Training</button>
+        <p style="text-align:center;margin-top:10px;"><a href="#" id="link-back-to-intro" style="color:var(--gold,#C9A84C);font-size:0.9rem;">← Back to overview</a></p>
+      </div>
+      <div id="screen-quiz" class="form-section fade-in" hidden>
+        <div class="quiz-progress"><div class="quiz-progress-bar"><div id="q-progress-bar" class="quiz-progress-fill"></div></div><div class="quiz-progress-row"><span id="q-progress-text">Question 1 of 100</span><span id="q-topic" class="quiz-topic-pill"></span></div></div>
+        <h2 id="q-text" class="quiz-question"></h2>
+        <div id="q-choices" class="quiz-choices"></div>
+        <div id="q-feedback" class="quiz-feedback" hidden></div>
+        <div class="quiz-nav"><button id="q-prev" type="button" class="btn btn--outline">Previous</button><button id="q-check" type="button" class="btn btn--gold" disabled>Check Answer</button><button id="q-next" type="button" class="btn btn--gold" hidden>Continue</button></div>
+        <div style="text-align:center;margin-top:18px;"><button id="btn-save-exit" type="button" class="btn btn--outline" style="font-size:0.85rem;padding:8px 18px;">Save &amp; Exit</button></div>
+        <p id="save-status" class="save-status">Your progress is auto-saved on this device.</p>
+      </div>
+      <div id="screen-result" class="form-section fade-in" hidden>
+        <div id="result-pass" hidden><h2 style="text-align:center;color:var(--gold);margin-bottom:6px;">You Passed</h2><hr class="gold-line" aria-hidden="true"><p class="section-subtitle">You've completed the BDE Your Rights Training.</p></div>
+        <div id="result-fail" hidden><h2 style="text-align:center;margin-bottom:6px;">Almost There</h2><hr class="gold-line" aria-hidden="true"><p class="section-subtitle">You need 80% to earn the certificate.</p></div>
+        <div class="result-score-card"><div class="result-score-main"><div class="result-score-num"><span id="result-score">0 / 100</span></div><div class="result-score-pct"><span id="result-pct">0%</span></div></div><div class="result-breakdown" id="result-breakdown"></div></div>
+        <div class="result-actions"><button id="btn-download-cert" type="button" class="btn btn--gold">Download Certificate (PDF)</button><button id="btn-retry" type="button" class="btn btn--outline">Retake Training</button></div>
+        <details class="result-review"><summary>Review missed questions</summary><div id="result-wrong"></div></details>
+      </div>
+    </div>
+  </section>
+  <form name="bde-training-completion-rights" netlify hidden><input type="text" name="name"><input type="email" name="email"><input type="text" name="training"><input type="text" name="score"><input type="text" name="percent"><input type="text" name="passed"><input type="text" name="completed_at"></form>
+  </main>
+  <footer class="footer"><div class="container"><div class="footer-content"><div><img src="assets/logo.png" alt="BDE logo" class="footer-logo"><p>Brothers Dedicated To Excellence is a nonprofit organization forging leaders, strengthening communities, and creating impact that outlasts us all.</p></div><nav><h4>Navigate</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="events.html">Events</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="membership.html">Membership</a></li><li><a href="community-service.html">Community Service</a></li><li><a href="donate.html">Donate</a></li></ul></nav><div><h4>Connect</h4><ul class="footer-links"><li><a href="mailto:brothersdedicatedtoexcellence@gmail.com">brothersdedicatedtoexcellence@gmail.com</a></li><li><a href="tel:+14437320492">(443) 732-0492</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 Brothers Dedicated To Excellence. All rights reserved.</p></div></div></footer>
+  <script>
+    window.BDE_TRAINING_STORAGE_KEY = 'bde_training_progress_rights_v1';
+    window.BDE_TRAINING_TITLE = 'Your Rights When Stopped by Police';
+    window.BDE_TRAINING_HOURS = 5;
+    window.BDE_TRAINING_CERT_BODY = ['has successfully completed the BDE Your Rights When Stopped by Police Training —', 'a 100-question course on the Fourth, Fifth, and Sixth Amendments in plain', 'language — what you can do, what you should say, and when.'];
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="js/training-bank-your-rights.js"></script>
+  <script src="js/training-hints-your-rights.js"></script>
+  <script src="js/training.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

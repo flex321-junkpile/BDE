@@ -11,30 +11,36 @@
   <link rel="icon" href="assets/logo.png">
 </head>
 <body>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
+
   <!-- Navigation -->
-  <nav class="navbar">
+  <nav class="navbar" aria-label="Main navigation">
     <div class="container">
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="events.html">Events</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
         <li><a href="membership.html">Membership</a></li>
+        <li><a href="community-service.html">Community Service</a></li>
+        <li><a href="training-hub.html">Training</a></li>
         <li><a href="donate.html">Donate</a></li>
       </ul>
-      <button class="hamburger" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </button>
     </div>
   </nav>
 
+  <main id="main-content">
+
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero" aria-label="Welcome to Brothers Dedicated To Excellence">
     <div class="hero-content">
-      <img src="assets/logo.png" alt="BDE Logo" class="hero-logo hero-logo--pulse">
+      <img src="assets/logo.png" alt="Brothers Dedicated To Excellence logo" class="hero-logo hero-logo--pulse">
       <h1>Brothers Dedicated<br>To Excellence</h1>
       <p class="tagline">Where Purpose Meets Brotherhood.</p>
       <p>We don't just talk about change&mdash;we build it. BDE is a collective of driven men committed to elevating their communities, sharpening each other, and leaving a legacy that speaks for itself.</p>
@@ -42,23 +48,23 @@
   </section>
 
   <!-- Stats Section -->
-  <section class="section section--dark">
+  <section class="section section--dark" aria-label="Organization statistics">
     <div class="container">
       <div class="stats fade-in">
         <div class="stat-item">
-          <span class="stat-number">20+</span>
+          <span class="stat-number" aria-label="More than 20">20+</span>
           <span class="stat-label">Brothers Strong</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number">10+</span>
+          <span class="stat-number" aria-label="More than 10">10+</span>
           <span class="stat-label">Events &amp; Counting</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number">20+</span>
+          <span class="stat-number" aria-label="More than 20">20+</span>
           <span class="stat-label">Lives Touched</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number">2+</span>
+          <span class="stat-number" aria-label="More than 2">2+</span>
           <span class="stat-label">Years Deep</span>
         </div>
       </div>
@@ -66,16 +72,16 @@
   </section>
 
   <!-- Brothers in Action -->
-  <section class="section">
+  <section class="section" aria-labelledby="brothers-heading">
     <div class="container">
       <div style="text-align:center;" class="fade-in">
         <span class="section-label">The Brotherhood</span>
       </div>
-      <h2 class="section-title fade-in">Brothers in Action</h2>
-      <hr class="gold-line">
+      <h2 id="brothers-heading" class="section-title fade-in">Brothers in Action</h2>
+      <hr class="gold-line" aria-hidden="true">
 
       <div class="group-photo-frame fade-in">
-        <img src="assets/photos/IMG_0113.jpg" alt="BDE Brothers" class="group-photo">
+        <img src="assets/photos/IMG_0113.jpg" alt="BDE brothers gathered together at a group event" class="group-photo">
       </div>
 
       <div style="text-align:center;margin-top:36px;" class="fade-in">
@@ -85,28 +91,28 @@
   </section>
 
   <!-- Mission Section -->
-  <section class="section section--dark">
+  <section class="section section--dark" aria-labelledby="pillars-heading">
     <div class="container">
       <div style="text-align:center;" class="fade-in">
         <span class="section-label">What Drives Us</span>
       </div>
-      <h2 class="section-title fade-in">Built on Three Pillars</h2>
-      <hr class="gold-line">
+      <h2 id="pillars-heading" class="section-title fade-in">Built on Three Pillars</h2>
+      <hr class="gold-line" aria-hidden="true">
       <p class="section-subtitle fade-in">Every brother walks taller because we walk together.</p>
 
       <div class="pillars fade-in-stagger">
         <div class="pillar fade-in">
-          <span class="pillar-icon">&#9733;</span>
+          <span class="pillar-icon" aria-hidden="true">&#9733;</span>
           <h3>Leadership</h3>
           <p>We develop men who don't wait for permission to lead. Principled, bold, and rooted in integrity&mdash;our brothers step up when it matters most.</p>
         </div>
         <div class="pillar fade-in">
-          <span class="pillar-icon">&#9829;</span>
+          <span class="pillar-icon" aria-hidden="true">&#9829;</span>
           <h3>Service</h3>
           <p>Impact isn't theoretical here. We show up&mdash;in classrooms, shelters, and neighborhoods&mdash;with our hands and our hearts, not just our words.</p>
         </div>
         <div class="pillar fade-in">
-          <span class="pillar-icon">&#10038;</span>
+          <span class="pillar-icon" aria-hidden="true">&#10038;</span>
           <h3>Brotherhood</h3>
           <p>Authentic bonds. Real accountability. The kind of circle that calls you higher and catches you when you fall. That's what we're building.</p>
         </div>
@@ -114,31 +120,35 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer" aria-label="Site footer">
     <div class="container">
       <div class="footer-content">
         <div>
-          <img src="assets/logo.png" alt="BDE Logo" class="footer-logo">
+          <img src="assets/logo.png" alt="Brothers Dedicated To Excellence logo" class="footer-logo">
           <p>Brothers Dedicated To Excellence is a nonprofit organization forging leaders, strengthening communities, and creating impact that outlasts us all.</p>
         </div>
-        <div>
+        <nav aria-label="Footer navigation">
           <h4>Navigate</h4>
-          <ul class="footer-links">
+          <ul class="footer-links" role="list">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="events.html">Events</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="testimonials.html">Testimonials</a></li>
             <li><a href="membership.html">Membership</a></li>
+            <li><a href="community-service.html">Community Service</a></li>
+            <li><a href="training-hub.html">Training</a></li>
             <li><a href="donate.html">Donate</a></li>
           </ul>
-        </div>
+        </nav>
         <div>
           <h4>Connect</h4>
-          <ul class="footer-links">
-            <li>brothersdedicatedtoexcellence@gmail.com</li>
-            <li>(443) 732-0492</li>
+          <ul class="footer-links" role="list">
+            <li><a href="mailto:brothersdedicatedtoexcellence@gmail.com">brothersdedicatedtoexcellence@gmail.com</a></li>
+            <li><a href="tel:+14437320492">(443) 732-0492</a></li>
           </ul>
         </div>
       </div>

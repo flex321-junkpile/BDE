@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training Hub - Brothers Dedicated To Excellence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/logo.png">
+  <style>
+    .training-hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+    .training-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 14px;
+      padding: 26px 24px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .training-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold, #C9A84C);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    }
+    .training-card h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold, #C9A84C);
+      margin: 0 0 10px;
+      font-size: 1.35rem;
+    }
+    .training-card .card-meta {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .training-card p {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+      line-height: 1.55;
+      margin: 0 0 20px;
+      flex-grow: 1;
+    }
+    .training-card .card-cta { margin-top: auto; }
+    .hub-intro-facts {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      margin: 20px 0 6px; justify-content: center;
+    }
+    .hub-fact {
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 10px; padding: 10px 18px;
+      font-size: 0.9rem; color: rgba(255,255,255,0.9);
+    }
+    .hub-fact strong { color: var(--gold, #C9A84C); }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="community-service.html" class="active" aria-current="page">Community Service</a></li>
+        <li><a href="training-hub.html">Training</a></li>
+        <li><a href="donate.html">Donate</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+  <section class="page-header">
+    <div class="container">
+      <h1>BDE Training Hub</h1>
+      <hr class="gold-line" aria-hidden="true">
+      <p>Ten focused, standalone trainings. Take one, take them all — earn a certificate for each.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width: 1080px;">
+
+      <div class="intro-block">
+        <h3>How This Works</h3>
+        <p>Each training is a standalone 100-question course you can complete on your own time. Every training earns its own certificate of completion when you score 80% or higher. Your progress saves automatically — pause and come back later on the same device.</p>
+
+        <div class="hub-intro-facts">
+          <div class="hub-fact"><strong>10</strong> trainings</div>
+          <div class="hub-fact"><strong>100</strong> questions each</div>
+          <div class="hub-fact"><strong>5 hr</strong> per training</div>
+          <div class="hub-fact"><strong>80%</strong> to earn each certificate</div>
+          <div class="hub-fact"><strong>1 cert</strong> per training</div>
+        </div>
+      </div>
+
+      <div class="training-hub-grid">
+
+        <!-- 1. ANGER MANAGEMENT -->
+        <div class="training-card">
+          <div class="card-meta">Training 1 · 100 Questions</div>
+          <h3>Anger Management</h3>
+          <p>Recognizing triggers, calming techniques, healthy expression, and de-escalation. Build the tools to notice anger earlier, calm your nervous system, and protect the relationships that matter.</p>
+          <div class="card-cta">
+            <a href="training-anger-management.html" class="btn btn--gold" style="width:100%;text-align:center;">Start Training</a>
+          </div>
+        </div>
+
+        <!-- 2. POLICE INTERACTION -->
+        <div class="training-card">
+          <div class="card-meta">Training 2 · 100 Questions</div>
+          <h3>Common Police Interaction Best Practices</h3>
+          <p>How to stay safe and calm during any law enforcement encounter — hands, words, body language. Real-world tools for de-escalation, communication, and getting home safely.</p>
+          <div class="card-cta">
+            <a href="training-police-interaction.html" class="btn btn--gold" style="width:100%;text-align:center;">Start Training</a>
+          </div>
+        </div>
+
+        <!-- 3. COMMON THINGS TO KNOW -->
+        <div class="training-card">
+          <div class="card-meta">Training 3 · 100 Questions</div>
+          <h3>Common Things to Know — Police, Traffic, Public</h3>
+          <p>Traffic stops, public spaces, checkpoints, witness situations, and everyday civic know-how. Practical knowledge for navigating public life with confidence.</p>
+          <div class="card-cta">
+            <a href="training-common-things-to-know.html" class="btn btn--gold" style="width:100%;text-align:center;">Start Training</a>
+          </div>
+        </div>
+
+        <!-- 4. YOUR RIGHTS -->
+        <div class="training-card">
+          <div class="card-meta">Training 4 · 100 Questions</div>
+          <h3>Your Rights When Stopped by Police</h3>
+          <p>The Fourth, Fifth, and Sixth Amendments in plain language — what you can do, what you should say, and when. Rights are only useful if you know how and when to use them.</p>
+          <div class="card-cta">
+            <a href="training-your-rights.html" class="btn btn--gold" style="width:100%;text-align:center;">Start Training</a>
+          </div>
+        </div>
+
+        <!-- 5. MENTAL HEALTH -->
+        <div class="training-card">
+          <div class="card-meta">Training 5 · 100 Questions</div>
+          <h3>Mental Therapy / Mental Health</h3>
+          <p>Types of therapy, signs to seek help, breaking stigma, and crisis resources (988). A guided introduction to prioritizing your mental well-being with the same seriousness as your physical health.</p>
+          <div class="card-cta">
+            <a href="training-mental-health.html" class="btn btn--gold" style="width:100%;text-align:center;">Start Training</a>
+          </div>
+        </div>
+
+        <!-- 6. SEL -->
+        <div class="training-card">
+          <div class="card-meta">Training 6 · 100 Questions</div>
+          <h3>Social and Emotional Learning (SEL)</h3>
+          <p>Self-awareness, self-management, social awareness, relationship skills, and responsible decision-making — plus growth mindset and applied SEL. The framework that underpins everything else.</p>
+          <div class="card-cta">
+            <a href="training-sel.html" class="btn btn--gold" style="width:100%;text-align:center;">Start Training</a>
+          </div>
+        </div>
+
+        <!-- 7. FINANCIAL LITERACY -->
+        <div class="training-card">
+          <div class="card-meta">Training 7 · 100 Questions</div>
+          <h3>Financial Literacy &amp; Money Management</h3>
+          <p>Budgeting, banking, credit and credit repair, debt and predatory lending, court fines, saving, and building real financial stability. Money skills are the foundation of freedom.</p>
+          <div class="card-cta">
+            <a href="training-financial-literacy.html" class="btn btn--gold" style="width:100%;text-align:center;">Start Training</a>
+          </div>
+        </div>
+
+        <!-- 8. JOB READINESS -->
+        <div class="training-card">
+          <div class="card-meta">Training 8 · 100 Questions</div>
+          <h3>Job Readiness — Getting Hired With a Record</h3>
+          <p>Job searching, resumes, applications and background checks, interview skills, talking about your record, your rights and record sealing, and keeping and growing the job.</p>
+          <div class="card-cta">
+            <a href="training-job-readiness.html" class="btn btn--gold" style="width:100%;text-align:center;">Start Training</a>
+          </div>
+        </div>
+
+        <!-- 9. SUBSTANCE USE AWARENESS -->
+        <div class="training-card">
+          <div class="card-meta">Training 9 · 100 Questions</div>
+          <h3>Substance Use Awareness &amp; Healthy Choices</h3>
+          <p>How substances affect the brain and body, alcohol and common drugs, warning signs, the law, harm reduction and overdose response, and paths to recovery. Honest facts, no judgment.</p>
+          <div class="card-cta">
+            <a href="training-substance-awareness.html" class="btn btn--gold" style="width:100%;text-align:center;">Start Training</a>
+          </div>
+        </div>
+
+        <!-- 10. CONFLICT RESOLUTION -->
+        <div class="training-card">
+          <div class="card-meta">Training 10 · 100 Questions</div>
+          <h3>Conflict Resolution &amp; De-escalation</h3>
+          <p>Handling conflict between people: listening, de-escalation in the moment, healthy communication, boundaries and walking away, repair, and conflict at home, work, and online.</p>
+          <div class="card-cta">
+            <a href="training-conflict-resolution.html" class="btn btn--gold" style="width:100%;text-align:center;">Start Training</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="training-overview" style="margin-top:36px;">
+        <p class="disclaimer"><strong>Disclaimer:</strong> These trainings are educational. They are not legal advice, medical advice, or a substitute for professional mental health care. If you are in crisis, call or text <strong>988</strong> (Suicide &amp; Crisis Lifeline).</p>
+      </div>
+
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <img src="assets/logo.png" alt="Brothers Dedicated To Excellence logo" class="footer-logo">
+          <p>Brothers Dedicated To Excellence is a nonprofit organization forging leaders, strengthening communities, and creating impact that outlasts us all.</p>
+        </div>
+        <nav aria-label="Footer navigation">
+          <h4>Navigate</h4>
+          <ul class="footer-links" role="list">
+            <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="events.html">Events</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="membership.html">Membership</a></li><li><a href="community-service.html">Community Service</a></li><li><a href="donate.html">Donate</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h4>Connect</h4>
+          <ul class="footer-links" role="list">
+            <li><a href="mailto:brothersdedicatedtoexcellence@gmail.com">brothersdedicatedtoexcellence@gmail.com</a></li>
+            <li><a href="tel:+14437320492">(443) 732-0492</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Brothers Dedicated To Excellence. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

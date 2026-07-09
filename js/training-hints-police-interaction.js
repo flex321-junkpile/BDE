@@ -1,0 +1,122 @@
+// BDE Training — Police Interaction Best Practices Hints + Explanations
+
+const BDE_TRAINING_HINTS = [
+
+  // ---------- SECTION 1 — FOUNDATIONAL SAFETY (1-10) ----------
+  { hint: "Winning the moment vs. winning the long game.", explanation: "Court is for arguments; the roadside is for compliance and de-escalation. Get home first." },
+  { hint: "It's about timing, not surrender.", explanation: "Saving the fight for the proper venue (court, complaint, lawyer) preserves your physical safety and your legal case." },
+  { hint: "Where can you bring evidence, witnesses, and a lawyer?", explanation: "Courts, complaints, and attorneys are designed to hold officers accountable. The street is not." },
+  { hint: "The stakes of the encounter itself.", explanation: "Nothing you can accomplish in the moment is worth more than everyone leaving safely." },
+  { hint: "Understanding their frame lowers the temperature.", explanation: "Officers train for danger; showing you're not one de-escalates the encounter faster than arguing." },
+  { hint: "The street is not the courtroom.", explanation: "Legal debates belong in front of a judge, with representation and evidence — not on the roadside." },
+  { hint: "Save the fight for the venue that's built for it.", explanation: "Compliance now protects both your safety and your legal case; courts exist to fix wrongs later." },
+  { hint: "De-escalation starts in your head.", explanation: "Reframing the goal to safety and de-escalation guides everything else you do in the encounter." },
+  { hint: "Physical resistance opens doors you don't want opened.", explanation: "It adds charges, invites force, and destroys credibility later — no upside." },
+  { hint: "Three states at once.", explanation: "Alert, respectful, calm — that combination communicates control without threat and keeps you safe." },
+
+  // ---------- SECTION 2 — HANDS, BODY, MOVEMENT (11-25) ----------
+  { hint: "What an officer can see, they don't have to fear.", explanation: "Officer safety is their top concern; visible hands signal you're not a threat and de-escalate immediately." },
+  { hint: "Three things together.", explanation: "Visible hands, calm voice, and slow movement signal non-threat across visual, auditory, and physical channels at once." },
+  { hint: "Officers train for split-second decisions.", explanation: "Quick movements look the same whether you're grabbing ID or a weapon — slow movement keeps the situation calm." },
+  { hint: "Officers can't see your hands inside a glove box.", explanation: "Telling them what you're about to do removes any ambiguity about whether you're reaching for something dangerous." },
+  { hint: "Help the officer see inside the car safely.", explanation: "Lit interior makes you and the car visible, removing a common source of officer anxiety on night stops." },
+  { hint: "Stay in the car unless told otherwise.", explanation: "Getting out on your own signals unknown intent and is one of the fastest ways to escalate a stop." },
+  { hint: "They're watching both sides of the car.", explanation: "Passengers with hidden hands raise the officer's alert level for the whole stop." },
+  { hint: "Ambiguity is the enemy.", explanation: "Officers can't read minds — narration removes guesswork about what your hands are doing." },
+  { hint: "Speed matters here.", explanation: "Immediate compliance with commands about your hands is one of the clearest ways to lower tension." },
+  { hint: "Non-threat has a look.", explanation: "Open posture and slow movement broadcast that you're not preparing to fight or flee." },
+  { hint: "A brief \"pardon me\" fixes it.", explanation: "A quick verbal note keeps a normal body reflex from being misread as sudden movement." },
+  { hint: "Anything blocking the eyes reads as concealment.", explanation: "Removing sunglasses at night when asked eliminates a common tension point without giving anything up." },
+  { hint: "Reduce ambiguity in every movement.", explanation: "Announcing any movement toward bags or pockets keeps the officer's threat model calibrated correctly." },
+  { hint: "Barriers read as pre-combat.", explanation: "Using anything as \"cover\" during a stop can look like preparing to fight, not compliance." },
+  { hint: "You can ask questions but still need to step out.", explanation: "Officers may order you out of the car during a lawful stop (Pennsylvania v. Mimms). Refusing creates more risk." },
+
+  // ---------- SECTION 3 — COMMUNICATION (26-40) ----------
+  { hint: "First impressions set the tone.", explanation: "A calm opening lowers the temperature for both of you and makes the rest of the stop go smoother." },
+  { hint: "Giving false info is its own offense.", explanation: "Lying to law enforcement can be charged separately and almost always makes the original situation worse." },
+  { hint: "You can decline — but say it out loud.", explanation: "Stating the invocation clearly signals you're using your Fifth Amendment right, not just being uncooperative." },
+  { hint: "This is THE key phrase to know.", explanation: "This question forces the encounter to be either consensual (you can leave) or detention (your rights kick in)." },
+  { hint: "Silence needs a spoken anchor.", explanation: "Salinas v. Texas confirmed you must actually invoke the right — silence alone can be used against you." },
+  { hint: "Volume changes the character of the encounter.", explanation: "Yelling puts everyone on higher alert and reduces your credibility if the case is reviewed later." },
+  { hint: "Legal, but tactically bad.", explanation: "Profanity is usually protected speech, but it reads as contempt and escalates the encounter unnecessarily." },
+  { hint: "Calm shortens stops.", explanation: "Officers move through calm interactions faster because they don't have to manage the tension." },
+  { hint: "Reads as contempt.", explanation: "Sarcasm is one of the fastest ways to shift an officer from cooperative to combative." },
+  { hint: "Assertive, not aggressive.", explanation: "Polite phrasing keeps your intent clear without triggering a defensive reaction." },
+  { hint: "Ask for clarification instead of guessing.", explanation: "Clarifying keeps you from accidentally answering the wrong question or making incorrect statements." },
+  { hint: "Say only what's required.", explanation: "Extra volunteered information can become evidence you didn't need to provide." },
+  { hint: "It's a fishing question — don't take the bait.", explanation: "Officers often ask this hoping for an admission. Politely deflecting doesn't lie; it just doesn't volunteer evidence." },
+  { hint: "Clarity matters, tone matters more.", explanation: "A calm, clear refusal to search preserves your rights without inviting escalation." },
+  { hint: "Old-school respect defuses.", explanation: "Simple respectful acknowledgments keep the temperature low without giving anything up." },
+
+  // ---------- SECTION 4 — VEHICLE STOPS (41-55) ----------
+  { hint: "Right side is safer for approach.", explanation: "Right shoulder lets officers approach from the safer side, away from traffic." },
+  { hint: "Make yourself easy to read.", explanation: "Engine off, hands visible, body still — all signal compliance and reduce officer anxiety." },
+  { hint: "Openness signals nothing to hide.", explanation: "A fully lowered window creates clear communication and removes the impression of anything being concealed." },
+  { hint: "Narrate every movement.", explanation: "Announcing what you're doing before moving removes ambiguity about whether you're reaching for danger." },
+  { hint: "Glove box hides your hand — narrate.", explanation: "Verbally telling the officer what you're opening keeps the movement from being misread." },
+  { hint: "Passengers should mirror the driver.", explanation: "Passengers act as extra 'unknowns' — visible hands and quiet cooperation lower the officer's alert level." },
+  { hint: "It's the driver's stop — back them up by staying calm.", explanation: "Passengers escalating the encounter make it worse for the driver and themselves." },
+  { hint: "Give the officer visibility.", explanation: "Rolling back windows down helps the officer see everyone, which reduces uncertainty." },
+  { hint: "Music blocks communication.", explanation: "Loud music makes it hard for both sides to hear and raises stress; killing it de-escalates." },
+  { hint: "Don't touch, but be honest if asked.", explanation: "Moving covered items during a stop looks like hiding evidence; leaving them alone is safer." },
+  { hint: "Odors can be probable cause — don't lie.", explanation: "Officers pick up on smells and use them legally; lying can make an ordinary stop much worse." },
+  { hint: "You must comply.", explanation: "Officers may order occupants out of a car during a lawful stop; refusing creates new problems." },
+  { hint: "Phones can wait.", explanation: "Managing a call during a stop is a distraction that adds tension for everyone." },
+  { hint: "Comply first, address later.", explanation: "The curb, like every other roadside instruction, is not the venue to argue — compliance protects you." },
+  { hint: "One question, one calm delivery.", explanation: "Asking politely once is fine; demanding an answer or repeating loudly is what causes trouble." },
+
+  // ---------- SECTION 5 — PEDESTRIAN & PUBLIC (56-65) ----------
+  { hint: "Find out your status calmly.", explanation: "Stopping and asking your status clarifies the encounter without triggering a chase." },
+  { hint: "Confirm your status.", explanation: "Without detention, the encounter is consensual and you can leave. Asking 'Am I free to go?' confirms your status." },
+  { hint: "Running can give probable cause to chase.", explanation: "Flight from a lawful stop is often enough to establish reasonable suspicion for pursuit." },
+  { hint: "Hidden hands = perceived threat.", explanation: "Hands in pockets look like they could be holding something — visible hands are always safer." },
+  { hint: "\"Terry v. Ohio\" set the standard.", explanation: "A frisk requires reasonable suspicion of danger; a full search requires more." },
+  { hint: "Comply physically, protect verbally.", explanation: "Cooperating with a frisk while stating you don't consent to a full search protects your legal position." },
+  { hint: "Casual contact ≠ authority to search.", explanation: "Officers can talk to anyone in public, but a search of you or your belongings needs consent, cause, or a warrant." },
+  { hint: "Absent consent, cause, or warrant, you can decline.", explanation: "Clear polite refusal preserves your Fourth Amendment claim if the search happens anyway." },
+  { hint: "One calm spokesperson helps.", explanation: "Groups tend to escalate; one calm person asking the status of the encounter clarifies things faster." },
+  { hint: "Recording from a distance is protected.", explanation: "First Amendment activity from a distance shouldn't invite intimidation as long as it doesn't interfere." },
+
+  // ---------- SECTION 6 — RECORDING (66-75) ----------
+  { hint: "It's protected expression.", explanation: "Federal courts hold that recording police in public is protected by the First Amendment, as long as you don't interfere." },
+  { hint: "Hiding looks suspicious; brandishing looks confrontational.", explanation: "Open, calm recording is both legal and de-escalating — it signals documentation, not escalation." },
+  { hint: "Get close enough to see, not close enough to interfere.", explanation: "Physical interference gives officers a legal basis to charge obstruction — keep distance." },
+  { hint: "Keep the tape rolling.", explanation: "Stopping mid-encounter creates gaps; letting it run creates the complete record." },
+  { hint: "Cloud upload protects the evidence.", explanation: "Streaming or auto-uploading keeps the video safe even if the phone is damaged or taken." },
+  { hint: "Recording yourself is different from recording others.", explanation: "Recording audio in your own vehicle with your voice on it is broadly lawful and useful evidence." },
+  { hint: "Memory fades fast.", explanation: "Detailed notes written the same day become powerful evidence — the sooner the better." },
+  { hint: "Details fade in hours.", explanation: "Names, badge numbers, patrol car numbers should be captured immediately or they're gone." },
+  { hint: "Public records exist.", explanation: "FOIA or department requests can pull body-cam footage in many jurisdictions." },
+  { hint: "Document AND diagnose.", explanation: "Photos + medical records give injuries both legal weight and health protection." },
+
+  // ---------- SECTION 7 — PASSENGERS, KIDS, MULTI-OFFICER (76-85) ----------
+  { hint: "Pick one voice to focus on.", explanation: "Arguing with multiple officers escalates fast. Address the lead officer and stay respectful." },
+  { hint: "Your calm sets theirs.", explanation: "Children mirror caregivers; staying calm reduces their distress and helps the stop go smoothly." },
+  { hint: "Kids learn what you model.", explanation: "Calm narration teaches them what to do in similar situations and reduces their fear." },
+  { hint: "Speak calmly on the child's behalf.", explanation: "You can state your child does not have to answer without being confrontational." },
+  { hint: "Age changes urgency.", explanation: "Elderly passengers may need extra time and reassurance — narration keeps them oriented." },
+  { hint: "Stories mismatching is a red flag.", explanation: "Officers may check for consistency; brief truth is the safest response to keep both people out of trouble." },
+  { hint: "Doesn't automatically stop the recording.", explanation: "The order may not be lawful in public, but arguing on the roadside is not the fight to have — comply and address later." },
+  { hint: "Different situations, different consequences.", explanation: "Passenger issues get handled separately — you're only responsible for your own compliance." },
+  { hint: "Depends on the state.", explanation: "Passenger ID rules vary by state; when in doubt comply calmly and address later." },
+  { hint: "Mimms extends to passengers.", explanation: "Officers may order any occupant out of a vehicle during a lawful stop." },
+
+  // ---------- SECTION 8 — FIREARMS (86-90) ----------
+  { hint: "Surprise is the worst outcome for everyone.", explanation: "Telling the officer up front (without reaching for the firearm) removes the dangerous element of surprise." },
+  { hint: "Sooner is safer.", explanation: "Early, clear disclosure prevents any accidental sighting from being misread as concealment." },
+  { hint: "Documentation with your ID.", explanation: "Presenting a permit alongside your license is smooth and expected in most states." },
+  { hint: "One clear sentence works.", explanation: "A calm declaration removes ambiguity and gives the officer time to guide the next step." },
+  { hint: "Freeze, listen, follow.", explanation: "When firearms are involved, precise compliance with each instruction is critical — no improvising." },
+
+  // ---------- SECTION 9 — WHEN THINGS GO WRONG (91-100) ----------
+  { hint: "Use the system designed for it.", explanation: "Internal affairs, civilian review boards, and civil rights lawsuits are the legal remedies for rights violations." },
+  { hint: "It's an in-department division.", explanation: "Internal affairs (or professional standards) investigates officer conduct within the department." },
+  { hint: "Independent oversight.", explanation: "Some cities have citizen panels with authority to review misconduct — usage varies by jurisdiction." },
+  { hint: "Invoke, don't recite trivia.", explanation: "Naming the right and the request for counsel is what stops questioning — the rest is noise." },
+  { hint: "Edwards v. Arizona.", explanation: "Once you clearly ask for a lawyer, officers must stop interrogating until counsel is present." },
+  { hint: "Any answer resets the clock.", explanation: "Answering after invoking silence waives what you just invoked — stay silent until counsel arrives." },
+  { hint: "Preserve everything, quickly.", explanation: "Photos, notes, and medical records early make later legal action realistic; late is often too late." },
+  { hint: "Creates a paper trail.", explanation: "A formal complaint enters the record even if the outcome is slow — it matters over time." },
+  { hint: "Specialists know the levers.", explanation: "Civil rights attorneys know how to file, when, and where to escalate — start there for serious violations." },
+  { hint: "Everything else is fixable later.", explanation: "The one non-negotiable outcome of any police encounter is that everyone gets home safely." }
+];

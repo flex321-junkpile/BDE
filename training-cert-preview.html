@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BDE Training Certificate Preview (Admin)</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#2b2d2f; --gold:#C9A84C; --gold-l:#E8C87A; }
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--navy); color: #ffffff;
+    margin: 0; padding: 40px 20px; min-height: 100vh;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  header { text-align: center; margin-bottom: 28px; }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold); margin: 0 0 8px; font-size: 1.6rem;
+  }
+  header p { color: rgba(255,255,255,0.78); margin: 0; }
+  .panel {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 10px; padding: 28px 30px;
+  }
+  .panel h2 {
+    color: var(--gold); font-family: 'Playfair Display', serif;
+    margin: 0 0 4px; font-size: 1.2rem;
+  }
+  .panel .lead { color: rgba(255,255,255,0.82); margin: 0 0 22px; font-size: 0.96rem; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 18px; }
+  .row-single { display: block; margin-bottom: 18px; }
+  label { display: block; font-weight: 700; margin-bottom: 6px; color: var(--gold-l); font-size: 0.92rem; }
+  input[type="text"], input[type="number"], select {
+    width: 100%; padding: 11px 13px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,168,76,0.4);
+    border-radius: 6px; color: #fff;
+    font-family: inherit; font-size: 1rem;
+  }
+  input:focus, select:focus { outline: none; border-color: var(--gold); }
+  select option { background: var(--navy); color: #fff; }
+  button {
+    background: linear-gradient(135deg, var(--gold), var(--gold-l));
+    color: var(--navy); border: none;
+    padding: 13px 24px; border-radius: 6px;
+    font-family: inherit; font-size: 1rem; font-weight: 700;
+    cursor: pointer; letter-spacing: 0.4px;
+    text-transform: uppercase; width: 100%;
+  }
+  button:hover { filter: brightness(1.1); }
+  .help {
+    background: rgba(201,168,76,0.07);
+    border-left: 3px solid var(--gold);
+    padding: 14px 18px; border-radius: 0 6px 6px 0;
+    margin-top: 22px; font-size: 0.9rem;
+    color: rgba(255,255,255,0.88); line-height: 1.55;
+  }
+  .help strong { color: var(--gold-l); }
+  .back { text-align: center; margin-top: 24px; }
+  .back a { color: var(--gold); text-decoration: none; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header>
+  <h1>Certificate Preview</h1>
+  <p>Internal preview — generate a sample certificate to see what trainees receive on completion.</p>
+</header>
+
+<div class="panel">
+  <h2>Generate a Sample Certificate</h2>
+  <p class="lead">Pick a training, fill in a name and score, then click Generate. The PDF will download.</p>
+
+  <div class="row-single">
+    <label for="cert-training">Training</label>
+    <select id="cert-training">
+      <option value="anger">Anger Management</option>
+      <option value="police">Common Police Interaction Best Practices</option>
+      <option value="common">Common Things to Know — Police, Traffic, Public</option>
+      <option value="rights">Your Rights When Stopped by Police</option>
+      <option value="mental">Mental Therapy / Mental Health</option>
+      <option value="sel">Social and Emotional Learning (SEL)</option>
+      <option value="financial">Financial Literacy &amp; Money Management</option>
+      <option value="job">Job Readiness — Getting Hired With a Record</option>
+      <option value="substance">Substance Use Awareness &amp; Healthy Choices</option>
+      <option value="conflict">Conflict Resolution &amp; De-escalation</option>
+    </select>
+  </div>
+
+  <div class="row">
+    <div>
+      <label for="cert-name">Trainee Name</label>
+      <input type="text" id="cert-name" value="Tarnell Sands" placeholder="John Doe">
+    </div>
+    <div>
+      <label for="cert-score">Final Score (%)</label>
+      <input type="number" id="cert-score" value="85" min="0" max="100">
+    </div>
+  </div>
+
+  <button id="btn-generate" type="button">Generate Sample Certificate</button>
+
+  <div class="help">
+    <strong>What you're previewing:</strong> The exact PDF a trainee gets when they pass a training (80%+). Navy + gold landscape, includes the training-specific title and cert body, a bold line showing 5 hours of community service credit, signed in the footer, with a unique Certificate ID.
+  </div>
+</div>
+
+<div class="back">
+  <a href="training-hub.html">← Back to Training Hub</a>
+</div>
+
+</div>
+
+<!-- Training configs — same values that live on each training page -->
+<script>
+const TRAINING_CONFIGS = {
+  anger: {
+    title: 'Anger Management Training',
+    body: [
+      'has successfully completed the BDE Anger Management Training —',
+      'a 100-question course on recognizing triggers, calming techniques,',
+      'healthy expression, and de-escalation.'
+    ],
+    hours: 5
+  },
+  police: {
+    title: 'Police Interaction Best Practices',
+    body: [
+      'has successfully completed the BDE Police Interaction Best Practices Training —',
+      'a 100-question course on staying safe and calm during any law',
+      'enforcement encounter through hands, words, and body language.'
+    ],
+    hours: 5
+  },
+  common: {
+    title: 'Common Things to Know — Police, Traffic, Public',
+    body: [
+      'has successfully completed the BDE Common Things to Know Training —',
+      'a 100-question course on traffic stops, public spaces, checkpoints,',
+      'witness situations, and everyday civic know-how.'
+    ],
+    hours: 5
+  },
+  rights: {
+    title: 'Your Rights When Stopped by Police',
+    body: [
+      'has successfully completed the BDE Your Rights When Stopped by Police Training —',
+      'a 100-question course on the Fourth, Fifth, and Sixth Amendments in plain',
+      'language — what you can do, what you should say, and when.'
+    ],
+    hours: 5
+  },
+  mental: {
+    title: 'Mental Therapy / Mental Health',
+    body: [
+      'has successfully completed the BDE Mental Therapy / Mental Health Training —',
+      'a 100-question course on types of therapy, common conditions,',
+      "crisis resources, and men's mental health."
+    ],
+    hours: 5
+  },
+  sel: {
+    title: 'Social and Emotional Learning (SEL)',
+    body: [
+      'has successfully completed the BDE Social and Emotional Learning (SEL) Training —',
+      'a 100-question course on self-awareness, self-management, social awareness,',
+      'relationship skills, and responsible decision-making.'
+    ],
+    hours: 5
+  },
+  financial: {
+    title: 'Financial Literacy & Money Management',
+    body: [
+      'has successfully completed the BDE Financial Literacy & Money Management Training —',
+      'a 100-question course on budgeting, banking, credit, debt, court fines,',
+      'saving, and building financial stability.'
+    ],
+    hours: 5
+  },
+  job: {
+    title: 'Job Readiness — Getting Hired With a Record',
+    body: [
+      'has successfully completed the BDE Job Readiness Training —',
+      'a 100-question course on job searching, resumes, interviews, background',
+      'checks, and getting hired with a record.'
+    ],
+    hours: 5
+  },
+  substance: {
+    title: 'Substance Use Awareness & Healthy Choices',
+    body: [
+      'has successfully completed the BDE Substance Use Awareness & Healthy Choices Training —',
+      'a 100-question course on how substances affect the body and mind, the law,',
+      'harm reduction, and paths to recovery.'
+    ],
+    hours: 5
+  },
+  conflict: {
+    title: 'Conflict Resolution & De-escalation',
+    body: [
+      'has successfully completed the BDE Conflict Resolution & De-escalation Training —',
+      'a 100-question course on listening, de-escalation, healthy communication,',
+      'boundaries, and repairing relationships after conflict.'
+    ],
+    hours: 5
+  }
+};
+
+// Set defaults BEFORE loading training.js so the engine reads them
+const initialCfg = TRAINING_CONFIGS.anger;
+window.BDE_TRAINING_TITLE = initialCfg.title;
+window.BDE_TRAINING_CERT_BODY = initialCfg.body;
+window.BDE_TRAINING_HOURS = initialCfg.hours;
+window.BDE_TRAINING_STORAGE_KEY = 'bde_training_progress_preview_v1';
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<!-- Load anger bank as filler — training.js needs SOMETHING to exist -->
+<script src="js/training-bank-anger.js"></script>
+<script src="js/training-hints-anger.js"></script>
+<script src="js/training.js"></script>
+<script>
+  document.getElementById('btn-generate').addEventListener('click', () => {
+    const key = document.getElementById('cert-training').value;
+    const cfg = TRAINING_CONFIGS[key];
+    const name = document.getElementById('cert-name').value.trim() || 'Sample Trainee';
+    const pct = Math.max(0, Math.min(100, parseInt(document.getElementById('cert-score').value || '85', 10)));
+
+    // Swap the globals so the certificate matches the selected training
+    window.BDE_TRAINING_TITLE = cfg.title;
+    window.BDE_TRAINING_CERT_BODY = cfg.body;
+    window.BDE_TRAINING_HOURS = cfg.hours;
+
+    if (typeof window.BDE_generateCertificate === 'function') {
+      window.BDE_generateCertificate(name, pct);
+    } else {
+      alert('Certificate generator not loaded.');
+    }
+  });
+</script>
+
+</body>
+</html>

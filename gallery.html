@@ -11,32 +11,37 @@
   <link rel="icon" href="assets/logo.png">
 </head>
 <body>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
 
   <!-- Navigation -->
-  <nav class="navbar">
+  <nav class="navbar" aria-label="Main navigation">
     <div class="container">
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="events.html">Events</a></li>
-        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="gallery.html" class="active" aria-current="page">Gallery</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
         <li><a href="membership.html">Membership</a></li>
+        <li><a href="community-service.html">Community Service</a></li>
+        <li><a href="training-hub.html">Training</a></li>
         <li><a href="donate.html">Donate</a></li>
       </ul>
-      <button class="hamburger" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </button>
     </div>
   </nav>
+
+  <main id="main-content">
 
   <!-- Page Header -->
   <section class="page-header">
     <div class="container">
       <h1>The Gallery</h1>
-      <hr class="gold-line">
+      <hr class="gold-line" aria-hidden="true">
       <p>Faces, moments, and memories from inside the brotherhood.</p>
     </div>
   </section>
@@ -47,7 +52,8 @@
 
       <!-- Upload Bar -->
       <div class="gallery-upload-bar fade-in">
-        <input type="file" id="photo-upload" accept="image/*" multiple style="display:none;">
+        <label for="photo-upload" class="sr-only">Upload photos to the gallery</label>
+        <input type="file" id="photo-upload" accept="image/*" multiple style="display:none;" aria-label="Upload photos to the gallery">
         <button class="btn btn--gold" onclick="document.getElementById('photo-upload').click()">
           + Add Photos
         </button>
@@ -78,31 +84,35 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer" aria-label="Site footer">
     <div class="container">
       <div class="footer-content">
         <div>
-          <img src="assets/logo.png" alt="BDE Logo" class="footer-logo">
+          <img src="assets/logo.png" alt="Brothers Dedicated To Excellence logo" class="footer-logo">
           <p>Brothers Dedicated To Excellence is a nonprofit organization forging leaders, strengthening communities, and creating impact that outlasts us all.</p>
         </div>
-        <div>
+        <nav aria-label="Footer navigation">
           <h4>Navigate</h4>
-          <ul class="footer-links">
+          <ul class="footer-links" role="list">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="events.html">Events</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="testimonials.html">Testimonials</a></li>
             <li><a href="membership.html">Membership</a></li>
+            <li><a href="community-service.html">Community Service</a></li>
+            <li><a href="training-hub.html">Training</a></li>
             <li><a href="donate.html">Donate</a></li>
           </ul>
-        </div>
+        </nav>
         <div>
           <h4>Connect</h4>
-          <ul class="footer-links">
-            <li>brothersdedicatedtoexcellence@gmail.com</li>
-            <li>(443) 732-0492</li>
+          <ul class="footer-links" role="list">
+            <li><a href="mailto:brothersdedicatedtoexcellence@gmail.com">brothersdedicatedtoexcellence@gmail.com</a></li>
+            <li><a href="tel:+14437320492">(443) 732-0492</a></li>
           </ul>
         </div>
       </div>
@@ -159,7 +169,7 @@
 
       // Built-in photos (no delete button)
       const builtInHTML = builtInPhotos.map(src => `
-        <div class="gallery-item" onclick="openLightbox('${src}')">
+        <div class="gallery-item" onclick="openLightbox('${src}')" onkeydown="if(event.key==='Enter'||event.key===' ')openLightbox('${src}')" tabindex="0" role="button" aria-label="View photo">
           <img src="${src}" alt="BDE Event Photo">
           <div class="gallery-item-overlay"></div>
         </div>
@@ -170,7 +180,7 @@
         <div class="gallery-item" data-index="${i}">
           <img src="${photo.src}" alt="${photo.name || 'BDE Photo'}">
           <div class="gallery-item-overlay">
-            <button class="gallery-delete-btn" onclick="deletePhoto(${i}, event)" title="Remove photo">&times;</button>
+            <button class="gallery-delete-btn" onclick="deletePhoto(${i}, event)" aria-label="Remove photo">&times;</button>
           </div>
         </div>
       `).join('');
@@ -199,8 +209,8 @@
       const lb = document.createElement('div');
       lb.className = 'lightbox';
       lb.innerHTML = `
-        <button class="lightbox-close" title="Close">&times;</button>
-        <img src="${src}" alt="BDE Photo">
+        <button class="lightbox-close" aria-label="Close photo viewer">&times;</button>
+        <img src="${src}" alt="BDE brotherhood photo">
       `;
       lb.addEventListener('click', (e) => {
         if (e.target === lb || e.target.classList.contains('lightbox-close')) {

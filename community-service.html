@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Service - Brothers Dedicated To Excellence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/logo.png">
+</head>
+<body>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="community-service.html" class="active" aria-current="page">Community Service</a></li>
+        <li><a href="training-hub.html">Training</a></li>
+        <li><a href="donate.html">Donate</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Community Service</h1>
+      <hr class="gold-line" aria-hidden="true">
+      <p>Service that strengthens the community — and the brothers who do it.</p>
+    </div>
+  </section>
+
+  <!-- What We Offer -->
+  <section class="section">
+    <div class="container">
+      <h2 style="text-align:center;margin-bottom:8px;">Our Services</h2>
+      <hr class="gold-line" aria-hidden="true">
+      <p class="section-subtitle">Four ways BDE shows up for the community. Earn service hours, build connection, support wellness.</p>
+
+      <div class="services-grid">
+
+        <div class="service-card fade-in">
+          <h3>Online Webinar</h3>
+          <p>A required orientation webinar covering BDE's mission, the standards we operate by, and how community service hours are tracked and verified. Complete this first before participating in any in-person service.</p>
+        </div>
+
+        <div class="service-card fade-in">
+          <h3>Community Service Outreach</h3>
+          <p>Hands-on outreach events in the local community — neighborhood cleanups, supply drives, youth mentorship pop-ups, and partnership events with community organizations.</p>
+        </div>
+
+        <div class="service-card fade-in">
+          <h3>Mental Health Hike</h3>
+          <p>A guided group hike built around the idea that movement and nature open men up. Brothers walk, talk, and process together in a low-pressure outdoor setting.</p>
+        </div>
+
+        <div class="service-card fade-in">
+          <h3>Mental Health Group Session</h3>
+          <p>A facilitated group conversation — the No Filter Zone format — focused on mental wellness, accountability, and peer support among men who agree to show up honestly.</p>
+        </div>
+
+      </div>
+
+      <div style="text-align:center;margin-top:32px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="training-hub.html" class="btn btn--gold">Browse All 10 Trainings</a>
+        <a href="assets/BDE_Community_Service_Services.pdf" class="btn btn--outline" download>Download Services Overview (PDF)</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Two-Path CTA -->
+  <section class="section section--alt">
+    <div class="container">
+
+      <div class="cta-two-up">
+
+        <div class="cta-card fade-in">
+          <h3>Need Community Service Hours?</h3>
+          <p>If you're looking to earn community service hours through BDE — for school, court, a program, or personal commitment — start with our consultation form. We'll review your situation and match you to the right service.</p>
+          <a href="https://docs.google.com/forms/d/1M3slyT_16R1u-weJ243gFxIAm9of2QeIT_bF64RZV0w/viewform" target="_blank" rel="noopener" class="btn btn--gold">Open Consultation Form</a>
+        </div>
+
+        <div class="cta-card fade-in">
+          <h3>Want to Join the Effort?</h3>
+          <p>If you want to help BDE deliver these services — as a volunteer, facilitator, or organizer — submit the application below. We'll be in touch about next steps.</p>
+          <a href="#join-application" class="btn btn--outline">Apply to Join</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Join Application Form -->
+  <section class="section" id="join-application">
+    <div class="container">
+      <div class="form-section fade-in" style="max-width:760px;margin:0 auto;">
+        <h2 style="text-align:center;margin-bottom:8px;">Join the Community Service Effort</h2>
+        <hr class="gold-line" aria-hidden="true">
+        <p class="section-subtitle">Tell us how you want to contribute. We'll follow up within a few days.</p>
+        <form id="cs-application-form" name="bde-community-service-application" method="post" data-netlify="true" netlify-honeypot="bot-field" action="thank-you.html">
+          <input type="hidden" name="form-name" value="bde-community-service-application">
+          <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="csName">Full Name *</label>
+              <input type="text" id="csName" name="csName" required aria-required="true" placeholder="Your full name">
+            </div>
+            <div class="form-group">
+              <label for="csEmail">Email Address *</label>
+              <input type="email" id="csEmail" name="csEmail" required aria-required="true" placeholder="your@email.com">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="csPhone">Phone Number *</label>
+              <input type="tel" id="csPhone" name="csPhone" required aria-required="true" placeholder="(555) 000-0000">
+            </div>
+            <div class="form-group">
+              <label for="csCity">City &amp; State *</label>
+              <input type="text" id="csCity" name="csCity" required aria-required="true" placeholder="City, ST">
+            </div>
+          </div>
+
+          <fieldset class="form-group">
+            <legend>Which services do you want to help with? *</legend>
+            <label class="check-row"><input type="checkbox" name="csInterest" value="Online Webinar"> Online Webinar</label>
+            <label class="check-row"><input type="checkbox" name="csInterest" value="Community Service Outreach"> Community Service Outreach</label>
+            <label class="check-row"><input type="checkbox" name="csInterest" value="Mental Health Hike"> Mental Health Hike</label>
+            <label class="check-row"><input type="checkbox" name="csInterest" value="Mental Health Group Session"> Mental Health Group Session</label>
+            <label class="check-row"><input type="checkbox" name="csInterest" value="Wherever I'm needed"> Wherever I'm needed</label>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="csRole">Preferred role</label>
+            <select id="csRole" name="csRole">
+              <option value="">Choose one...</option>
+              <option>Volunteer</option>
+              <option>Facilitator / Leader</option>
+              <option>Organizer / Logistics</option>
+              <option>Sponsor / Donor</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="csExperience">Relevant experience or skills</label>
+            <textarea id="csExperience" name="csExperience" placeholder="Counseling, event planning, hiking lead, social work, marketing — anything we should know."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="csAvailability">Availability</label>
+            <input type="text" id="csAvailability" name="csAvailability" placeholder="e.g., Weekends, weekday evenings">
+          </div>
+
+          <div class="form-group">
+            <label for="csWhy">Why do you want to serve with BDE?</label>
+            <textarea id="csWhy" name="csWhy" placeholder="What's pulling you in?"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--gold" style="width:100%;">Submit Application</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <img src="assets/logo.png" alt="Brothers Dedicated To Excellence logo" class="footer-logo">
+          <p>Brothers Dedicated To Excellence is a nonprofit organization forging leaders, strengthening communities, and creating impact that outlasts us all.</p>
+        </div>
+        <nav aria-label="Footer navigation">
+          <h4>Navigate</h4>
+          <ul class="footer-links" role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="membership.html">Membership</a></li>
+            <li><a href="community-service.html">Community Service</a></li>
+            <li><a href="training-hub.html">Training</a></li>
+            <li><a href="donate.html">Donate</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h4>Connect</h4>
+          <ul class="footer-links" role="list">
+            <li><a href="mailto:brothersdedicatedtoexcellence@gmail.com">brothersdedicatedtoexcellence@gmail.com</a></li>
+            <li><a href="tel:+14437320492">(443) 732-0492</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Brothers Dedicated To Excellence. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

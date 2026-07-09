@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Readiness — Brothers Dedicated To Excellence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/logo.png">
+</head>
+<body>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="community-service.html" class="active" aria-current="page">Community Service</a></li>
+        <li><a href="training-hub.html">Training</a></li>
+        <li><a href="donate.html">Donate</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Job Readiness — Getting Hired With a Record</h1>
+      <hr class="gold-line" aria-hidden="true">
+      <p>A focused 100-question training on job searching, resumes, interviews, background checks, and getting hired and building a career — record or not. Earn your BDE certificate of completion.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width: 880px;">
+
+      <div style="margin-bottom:20px;"><a href="training-hub.html" style="color:var(--gold,#C9A84C);">← Back to Training Hub</a></div>
+
+      <!-- INTRO / OVERVIEW SCREEN -->
+      <div id="screen-intro" class="form-section fade-in">
+        <h2 style="text-align:center;margin-bottom:8px;">About This Training</h2>
+        <hr class="gold-line" aria-hidden="true">
+
+        <div class="intro-block">
+          <h3>What This Is</h3>
+          <p>A steady job is one of the strongest foundations for a stable life — and a record doesn't have to stop you. This training walks you through the whole process: finding openings, building a resume, handling applications and background checks, interviewing well, talking about your past with confidence, knowing your rights, and keeping and growing the job once you land it.</p>
+        </div>
+
+        <div class="intro-block">
+          <h3>What's Covered</h3>
+          <ol class="intro-topics">
+            <li>
+              <strong>Job Search Foundations</strong>
+              <span>Where to look, networking, fair-chance employers, staffing agencies, and workforce centers.</span>
+            </li>
+            <li>
+              <strong>Resumes</strong>
+              <span>Format, listing skills and experience, handling gaps, and using volunteer and community service.</span>
+            </li>
+            <li>
+              <strong>Applications &amp; Background Checks</strong>
+              <span>Ban the Box, what checks show, your FCRA rights, and honesty on applications.</span>
+            </li>
+            <li>
+              <strong>Interview Skills</strong>
+              <span>Preparation, dress, punctuality, body language, common questions, and follow-up.</span>
+            </li>
+            <li>
+              <strong>Talking About Your Record</strong>
+              <span>When to disclose, how to explain briefly, take responsibility, and pivot to growth.</span>
+            </li>
+            <li>
+              <strong>Your Rights &amp; Clearing Your Record</strong>
+              <span>Expungement and record sealing in Virginia, hiring rights, and where to get legal help.</span>
+            </li>
+            <li>
+              <strong>Keeping the Job &amp; Growing</strong>
+              <span>Showing up, attitude, handling feedback and conflict, professionalism, and moving up.</span>
+            </li>
+          </ol>
+        </div>
+
+        <div class="intro-block">
+          <h3>Format &amp; Time</h3>
+          <div class="intro-facts">
+            <div class="fact"><span class="fact-num">100</span><span class="fact-label">Multiple-choice questions</span></div>
+            <div class="fact"><span class="fact-num">1</span><span class="fact-label">Standalone training</span></div>
+            <div class="fact"><span class="fact-num">5 hr</span><span class="fact-label">Completion credit</span></div>
+            <div class="fact"><span class="fact-num">80%</span><span class="fact-label">To earn certificate</span></div>
+          </div>
+          <p style="margin-top:14px;font-size:0.95rem;color:rgba(255,255,255,0.85);">You'll get a hint after your first wrong answer, and a short explanation after every question — this is meant to teach, not gatekeep. Your progress saves automatically; you can pause and come back later on the same device.</p>
+        </div>
+
+        <div class="training-overview" style="margin-top:18px;">
+          <p class="disclaimer" style="border-top:none;padding-top:0;"><strong>Disclaimer:</strong> This training is educational. It is not legal advice. Laws on background checks and record sealing change — for your situation, consult Virginia Legal Aid (<strong>valegalaid.org</strong>) or a qualified attorney.</p>
+        </div>
+
+        <button id="btn-intro-continue" type="button" class="btn btn--gold" style="width:100%;margin-top:18px;">Continue to Enrollment</button>
+      </div>
+
+      <!-- START SCREEN (enrollment) -->
+      <div id="screen-start" class="form-section fade-in" hidden>
+        <h2 style="text-align:center;margin-bottom:8px;">Enroll &amp; Begin</h2>
+        <hr class="gold-line" aria-hidden="true">
+        <p class="section-subtitle">Enter your name as you want it on the certificate. Your progress saves automatically — you can pause and come back later.</p>
+
+        <div id="resume-banner" class="resume-banner" hidden>
+          <h3>Welcome back, <span id="resume-name"></span></h3>
+          <p>You have a saved session in progress: <strong id="resume-progress"></strong>. Resume where you left off, or start over from question 1.</p>
+          <div class="resume-actions">
+            <button id="btn-resume" type="button" class="btn btn--gold">Resume Training</button>
+            <button id="btn-discard-saved" type="button" class="btn btn--outline">Start Over</button>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="start-name">Full Name *</label>
+            <input type="text" id="start-name" required placeholder="Name as you want it on the certificate">
+          </div>
+          <div class="form-group">
+            <label for="start-email">Email Address *</label>
+            <input type="email" id="start-email" required placeholder="your@email.com">
+          </div>
+        </div>
+
+        <button id="btn-start" type="button" class="btn btn--gold" style="width:100%;">Start Training</button>
+        <p style="text-align:center;margin-top:10px;"><a href="#" id="link-back-to-intro" style="color:var(--gold,#C9A84C);font-size:0.9rem;">← Back to overview</a></p>
+      </div>
+
+      <!-- QUIZ SCREEN -->
+      <div id="screen-quiz" class="form-section fade-in" hidden>
+        <div class="quiz-progress">
+          <div class="quiz-progress-bar"><div id="q-progress-bar" class="quiz-progress-fill"></div></div>
+          <div class="quiz-progress-row">
+            <span id="q-progress-text">Question 1 of 100</span>
+            <span id="q-topic" class="quiz-topic-pill"></span>
+          </div>
+        </div>
+
+        <h2 id="q-text" class="quiz-question"></h2>
+        <div id="q-choices" class="quiz-choices"></div>
+
+        <div id="q-feedback" class="quiz-feedback" hidden></div>
+
+        <div class="quiz-nav">
+          <button id="q-prev" type="button" class="btn btn--outline">Previous</button>
+          <button id="q-check" type="button" class="btn btn--gold" disabled>Check Answer</button>
+          <button id="q-next" type="button" class="btn btn--gold" hidden>Continue</button>
+        </div>
+
+        <div style="text-align:center;margin-top:18px;">
+          <button id="btn-save-exit" type="button" class="btn btn--outline" style="font-size:0.85rem;padding:8px 18px;">Save &amp; Exit (Come Back Later)</button>
+        </div>
+        <p id="save-status" class="save-status">Your progress is auto-saved on this device.</p>
+      </div>
+
+      <!-- RESULT SCREEN -->
+      <div id="screen-result" class="form-section fade-in" hidden>
+        <div id="result-pass" hidden>
+          <h2 style="text-align:center;color:var(--gold);margin-bottom:6px;">You Passed</h2>
+          <hr class="gold-line" aria-hidden="true">
+          <p class="section-subtitle">You've completed the BDE Job Readiness Training. Your certificate is downloading now — if it didn't, use the button below.</p>
+        </div>
+        <div id="result-fail" hidden>
+          <h2 style="text-align:center;margin-bottom:6px;">Almost There</h2>
+          <hr class="gold-line" aria-hidden="true">
+          <p class="section-subtitle">You need 80% to earn the certificate. Review the topics below and try again — you can retake the training.</p>
+        </div>
+
+        <div class="result-score-card">
+          <div class="result-score-main">
+            <div class="result-score-num"><span id="result-score">0 / 100</span></div>
+            <div class="result-score-pct"><span id="result-pct">0%</span></div>
+          </div>
+          <div class="result-breakdown" id="result-breakdown"></div>
+        </div>
+
+        <div class="result-actions">
+          <button id="btn-download-cert" type="button" class="btn btn--gold">Download Certificate (PDF)</button>
+          <button id="btn-retry" type="button" class="btn btn--outline">Retake Training</button>
+        </div>
+
+        <details class="result-review">
+          <summary>Review missed questions</summary>
+          <div id="result-wrong"></div>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Hidden Netlify form so the build picks it up at deploy time -->
+  <form name="bde-training-completion-job" netlify hidden>
+    <input type="text" name="name">
+    <input type="email" name="email">
+    <input type="text" name="training">
+    <input type="text" name="score">
+    <input type="text" name="percent">
+    <input type="text" name="passed">
+    <input type="text" name="completed_at">
+  </form>
+
+  </main>
+
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <img src="assets/logo.png" alt="Brothers Dedicated To Excellence logo" class="footer-logo">
+          <p>Brothers Dedicated To Excellence is a nonprofit organization forging leaders, strengthening communities, and creating impact that outlasts us all.</p>
+        </div>
+        <nav aria-label="Footer navigation">
+          <h4>Navigate</h4>
+          <ul class="footer-links" role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="membership.html">Membership</a></li>
+            <li><a href="community-service.html">Community Service</a></li>
+            <li><a href="training-hub.html">Training</a></li>
+            <li><a href="donate.html">Donate</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h4>Connect</h4>
+          <ul class="footer-links" role="list">
+            <li><a href="mailto:brothersdedicatedtoexcellence@gmail.com">brothersdedicatedtoexcellence@gmail.com</a></li>
+            <li><a href="tel:+14437320492">(443) 732-0492</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Brothers Dedicated To Excellence. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Training-specific config — must be set BEFORE loading training.js
+    window.BDE_TRAINING_STORAGE_KEY = 'bde_training_progress_job_v1';
+    window.BDE_TRAINING_TITLE = 'Job Readiness — Getting Hired With a Record';
+    window.BDE_TRAINING_HOURS = 5;
+    window.BDE_TRAINING_CERT_BODY = [
+      'has successfully completed the BDE Job Readiness Training —',
+      'a 100-question course on job searching, resumes, interviews, background',
+      'checks, and getting hired with a record.'
+    ];
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="js/training-bank-job-readiness.js"></script>
+  <script src="js/training-hints-job-readiness.js"></script>
+  <script src="js/training.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You for Your Donation – Brothers Dedicated To Excellence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/logo.png">
+  <style>
+    .thanks-hero {
+      padding: 96px 0 48px;
+      text-align: center;
+    }
+
+    .thanks-badge {
+      display: inline-block;
+      width: 88px;
+      height: 88px;
+      line-height: 88px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.12);
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      font-size: 2.4rem;
+      margin-bottom: 28px;
+    }
+
+    .thanks-hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      color: var(--white);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .thanks-hero p.lead {
+      max-width: 680px;
+      margin: 0 auto;
+      color: rgba(255,255,255,0.75);
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .receipt-card {
+      max-width: 640px;
+      margin: 56px auto 0;
+      background: var(--navy-light);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: var(--radius-lg);
+      padding: 36px 40px;
+      text-align: left;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .receipt-card .receipt-label {
+      display: block;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .receipt-card h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .receipt-card dl {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 20px;
+      margin: 0 0 20px;
+    }
+
+    .receipt-card dt {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
+
+    .receipt-card dd {
+      color: var(--white);
+      font-weight: 600;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .receipt-card .receipt-fineprint {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(201,168,76,0.15);
+      font-style: italic;
+    }
+
+    .next-steps {
+      max-width: 880px;
+      margin: 64px auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 0 24px;
+    }
+
+    .next-step {
+      background: var(--navy-light);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      text-align: center;
+      transition: all 0.25s ease;
+    }
+
+    .next-step:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .next-step h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.15rem;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .next-step p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .next-step a {
+      color: var(--gold);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 0.78rem;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      padding-bottom: 2px;
+    }
+
+    .next-step a:hover {
+      border-bottom-color: var(--gold);
+    }
+
+    @media (max-width: 768px) {
+      .next-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .receipt-card {
+        padding: 28px 22px;
+        margin: 40px 16px 0;
+      }
+
+      .receipt-card dl {
+        grid-template-columns: 1fr;
+        gap: 4px 0;
+      }
+
+      .receipt-card dt {
+        margin-top: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="community-service.html">Community Service</a></li>
+        <li><a href="donate.html" class="nav-donate">Donate</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <section class="section section--dark">
+      <div class="container">
+
+        <!-- Hero -->
+        <div class="thanks-hero fade-in">
+          <div class="thanks-badge" aria-hidden="true">&#10003;</div>
+          <span class="section-label">Donation Confirmed</span>
+          <h1>Thank You for Standing with BDE</h1>
+          <p class="lead">Your generosity directly fuels the mission — building better men, strengthening communities, and leaving a legacy that outlasts us. On behalf of every brother in BDE: thank you.</p>
+        </div>
+
+        <!-- Receipt Card -->
+        <div class="receipt-card fade-in">
+          <span class="receipt-label">Tax-Deductible Receipt</span>
+          <h2>Brothers Dedicated To Excellence</h2>
+          <dl>
+            <dt>Organization</dt>
+            <dd>Brothers Dedicated To Excellence</dd>
+            <dt>EIN</dt>
+            <dd>33-4838953</dd>
+            <dt>Tax Status</dt>
+            <dd>501(c)(3) Public Charity</dd>
+            <dt>Confirmation</dt>
+            <dd>Sent to your email by Zeffy</dd>
+          </dl>
+          <p class="receipt-fineprint">Brothers Dedicated To Excellence is a 501(c)(3) tax-exempt organization. Your contribution is tax-deductible to the fullest extent allowed by law. No goods or services were provided in exchange for this contribution. Please retain your Zeffy confirmation email for your tax records.</p>
+        </div>
+
+        <!-- Next Steps -->
+        <div class="next-steps fade-in">
+          <div class="next-step">
+            <h3>Stay Connected</h3>
+            <p>Follow what BDE is building and never miss an event or update.</p>
+            <a href="events.html">View Events &rarr;</a>
+          </div>
+          <div class="next-step">
+            <h3>Join the Brotherhood</h3>
+            <p>Become a member and lock in your place inside the movement.</p>
+            <a href="membership.html">Become a Member &rarr;</a>
+          </div>
+          <div class="next-step">
+            <h3>Spread the Word</h3>
+            <p>Tell another brother about BDE. The mission grows by invitation.</p>
+            <a href="https://bdexcellence.org" target="_blank" rel="noopener">Share BDE &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <img src="assets/logo.png" alt="BDE Logo" class="footer-logo">
+          <p>Brothers Dedicated To Excellence is a 501(c)(3) nonprofit organization forging leaders, strengthening communities, and creating impact that outlasts us all.</p>
+        </div>
+        <div>
+          <h4>Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="membership.html">Membership</a></li>
+            <li><a href="community-service.html">Community Service</a></li>
+            <li><a href="training-hub.html">Training</a></li>
+            <li><a href="donate.html">Donate</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul class="footer-links">
+            <li>brothersdedicatedtoexcellence@gmail.com</li>
+            <li>(443) 732-0492</li>
+            <li>EIN: 33-4838953</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Brothers Dedicated To Excellence. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

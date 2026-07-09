@@ -11,31 +11,36 @@
   <link rel="icon" href="assets/logo.png">
 </head>
 <body>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
   <!-- Navigation -->
-  <nav class="navbar">
+  <nav class="navbar" aria-label="Main navigation">
     <div class="container">
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="events.html">Events</a></li>
         <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="testimonials.html" class="active">Testimonials</a></li>
+        <li><a href="testimonials.html" class="active" aria-current="page">Testimonials</a></li>
         <li><a href="membership.html">Membership</a></li>
+        <li><a href="community-service.html">Community Service</a></li>
+        <li><a href="training-hub.html">Training</a></li>
         <li><a href="donate.html">Donate</a></li>
       </ul>
-      <button class="hamburger" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </button>
     </div>
   </nav>
+
+  <main id="main-content">
 
   <!-- Page Header -->
   <section class="page-header">
     <div class="container">
       <h1>Real Talk</h1>
-      <hr class="gold-line">
+      <hr class="gold-line" aria-hidden="true">
       <p>Don't take our word for it. Hear it straight from the brothers living it.</p>
     </div>
   </section>
@@ -47,7 +52,7 @@
         <span class="section-label">Voices of the Brotherhood</span>
       </div>
       <h2 class="section-title fade-in">What the Brothers Are Saying</h2>
-      <hr class="gold-line">
+      <hr class="gold-line" aria-hidden="true">
       <div class="fade-in" style="text-align:center;padding:60px 20px;">
         <p style="font-size:1.15rem;color:var(--text-light);max-width:540px;margin:0 auto;line-height:1.9;">Real words from real brothers&mdash;coming soon. Be the first to share your story below.</p>
       </div>
@@ -64,7 +69,7 @@
         <span class="section-label">Your Story Matters</span>
       </div>
       <h2 class="section-title fade-in">Share Your Experience</h2>
-      <hr class="gold-line">
+      <hr class="gold-line" aria-hidden="true">
       <p class="section-subtitle fade-in">If BDE has made an impact on your life, we want to hear it. Your words might be the reason someone else joins.</p>
 
       <div class="form-section fade-in">
@@ -89,31 +94,35 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer" aria-label="Site footer">
     <div class="container">
       <div class="footer-content">
         <div>
-          <img src="assets/logo.png" alt="BDE Logo" class="footer-logo">
+          <img src="assets/logo.png" alt="Brothers Dedicated To Excellence logo" class="footer-logo">
           <p>Brothers Dedicated To Excellence is a nonprofit organization forging leaders, strengthening communities, and creating impact that outlasts us all.</p>
         </div>
-        <div>
+        <nav aria-label="Footer navigation">
           <h4>Navigate</h4>
-          <ul class="footer-links">
+          <ul class="footer-links" role="list">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="events.html">Events</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="testimonials.html">Testimonials</a></li>
             <li><a href="membership.html">Membership</a></li>
+            <li><a href="community-service.html">Community Service</a></li>
+            <li><a href="training-hub.html">Training</a></li>
             <li><a href="donate.html">Donate</a></li>
           </ul>
-        </div>
+        </nav>
         <div>
           <h4>Connect</h4>
-          <ul class="footer-links">
-            <li>brothersdedicatedtoexcellence@gmail.com</li>
-            <li>(443) 732-0492</li>
+          <ul class="footer-links" role="list">
+            <li><a href="mailto:brothersdedicatedtoexcellence@gmail.com">brothersdedicatedtoexcellence@gmail.com</a></li>
+            <li><a href="tel:+14437320492">(443) 732-0492</a></li>
           </ul>
         </div>
       </div>
