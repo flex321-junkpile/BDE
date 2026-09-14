@@ -128,19 +128,27 @@
 
     // Built-in event photos (always shown, cannot be deleted)
     const builtInPhotos = [
-      'assets/photos/IMG_8241.jpg',
-      'assets/photos/IMG_0515.jpg',
-      'assets/photos/IMG_7180.jpg',
-      'assets/photos/IMG_7181.jpg',
-      'assets/photos/IMG_7158.jpg',
-      'assets/photos/IMG_7167.jpg',
-      'assets/photos/IMG_0113.jpg',
-      'assets/photos/IMG_0219.jpg',
-      'assets/photos/IMG_0109.jpg',
-      'assets/photos/IMG_1373.jpg',
-      'assets/photos/IMG_8248.jpg',
-      'assets/photos/IMG_0218.jpg',
-      'assets/photos/IMG_8488.jpg',
+      // Brotherhood Hike — Spring 2026
+      { src: 'assets/photos/IMG_6023.jpg', alt: 'Seventeen brothers gathered on the rocks above the Potomac for a group photo at Great Falls Park during the Higher Ground brotherhood hike' },
+      { src: 'assets/photos/IMG_6022.jpg', alt: 'The brothers gathered together on the rocks for a group photo at the top of the trail during the BDE brotherhood hike' },
+      { src: 'assets/photos/IMG_1956.jpg', alt: 'Brothers making their way up a wooded trail together on the BDE brotherhood hike' },
+      { src: 'assets/photos/IMG_1928.jpg', alt: 'Brothers regrouping on the riverbank below the rocks during the BDE brotherhood hike' },
+      { src: 'assets/photos/IMG_1926.jpg', alt: 'Wide view of the river and rock formations with brothers gathered on the shoreline during the BDE brotherhood hike' },
+
+      // Earlier events
+      { src: 'assets/photos/IMG_8241.jpg', alt: 'Brothers together at a BDE event' },
+      { src: 'assets/photos/IMG_0515.jpg', alt: 'Brothers together at a BDE event' },
+      { src: 'assets/photos/IMG_7180.jpg', alt: 'Brothers together at a BDE event' },
+      { src: 'assets/photos/IMG_7181.jpg', alt: 'Brothers together at a BDE event' },
+      { src: 'assets/photos/IMG_7158.jpg', alt: 'Brothers together at a BDE event' },
+      { src: 'assets/photos/IMG_7167.jpg', alt: 'Brothers together at a BDE event' },
+      { src: 'assets/photos/IMG_0113.jpg', alt: 'Brothers together at a BDE event' },
+      { src: 'assets/photos/IMG_0219.jpg', alt: 'Brothers together at a BDE event' },
+      { src: 'assets/photos/IMG_0109.jpg', alt: 'Brothers together at a BDE event' },
+      { src: 'assets/photos/IMG_1373.jpg', alt: 'Brothers together at a BDE event' },
+      { src: 'assets/photos/IMG_8248.jpg', alt: 'Brothers together at a BDE event' },
+      { src: 'assets/photos/IMG_0218.jpg', alt: 'Brothers together at a BDE event' },
+      { src: 'assets/photos/IMG_8488.jpg', alt: 'Brothers together at a BDE event' },
     ];
 
     function loadUploaded() {
@@ -168,9 +176,9 @@
       empty.style.display = 'none';
 
       // Built-in photos (no delete button)
-      const builtInHTML = builtInPhotos.map(src => `
-        <div class="gallery-item" onclick="openLightbox('${src}')" onkeydown="if(event.key==='Enter'||event.key===' ')openLightbox('${src}')" tabindex="0" role="button" aria-label="View photo">
-          <img src="${src}" alt="BDE Event Photo">
+      const builtInHTML = builtInPhotos.map(photo => `
+        <div class="gallery-item" onclick="openLightbox('${photo.src}')" onkeydown="if(event.key==='Enter'||event.key===' ')openLightbox('${photo.src}')" tabindex="0" role="button" aria-label="View photo: ${photo.alt}">
+          <img src="${photo.src}" alt="${photo.alt}" loading="lazy">
           <div class="gallery-item-overlay"></div>
         </div>
       `).join('');
@@ -178,7 +186,7 @@
       // Uploaded photos (with delete button)
       const uploadedHTML = uploaded.map((photo, i) => `
         <div class="gallery-item" data-index="${i}">
-          <img src="${photo.src}" alt="${photo.name || 'BDE Photo'}">
+          <img src="${photo.src}" alt="${photo.name || 'BDE Photo'}" loading="lazy">
           <div class="gallery-item-overlay">
             <button class="gallery-delete-btn" onclick="deletePhoto(${i}, event)" aria-label="Remove photo">&times;</button>
           </div>
